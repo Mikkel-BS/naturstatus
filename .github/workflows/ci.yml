@@ -17,5 +17,6 @@ jobs:
           test -s app.js
       - name: Verify SSB integration against live official statistics
         run: |
+          python scripts/check_map_sources.py
           python scripts/update_ssb.py
           python -m unittest discover -s tests

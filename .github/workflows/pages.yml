@@ -26,8 +26,8 @@ jobs:
         run: |
           python -m unittest discover -s tests
           mkdir -p dist/data
-          cp index.html styles.css app.js map.js goal.js ecosystems.js .nojekyll dist/
-          cp data/overview.csv data/historical.json data/targets.json data/ecosystems.json dist/data/
+          cp index.html styles.css app.js map.js goal.js ecosystems.js forest-history.js .nojekyll dist/
+          cp data/overview.csv data/historical.json data/targets.json data/ecosystems.json data/forest_history.json data/forest_history.csv dist/data/
           if [ -f data/historical.csv ]; then cp data/historical.csv dist/data/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

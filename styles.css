@@ -74,3 +74,24 @@
 .ecosystem-caveat a{color:#286544}
 @media(max-width:980px){.ecosystem-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.forest-grid{grid-template-columns:1fr}.ecosystem-cards{grid-template-columns:repeat(2,minmax(0,1fr))}nav{flex-wrap:wrap;justify-content:flex-end;max-width:70%}}
+
+/* Nature Index history: independent from protection percentages. */
+.nature-history-controls{display:flex;gap:18px;flex-wrap:wrap;margin:22px 0 16px}
+.nature-history-controls label{display:grid;gap:7px;min-width:220px;font-size:12px;color:#3c6850;font-weight:700}
+.nature-history-controls select{font:inherit;font-size:14px;padding:11px;background:#fbfcf9;border:1px solid #b8cebc;border-radius:7px;color:#173026}
+.nature-history-controls select:focus-visible{outline:3px solid #a5d3af;outline-offset:2px}
+.nature-history-chart-shell{padding:22px;background:#f8faf7;border:1px solid #e1e8df;border-radius:9px}
+.nature-history-chart-label{display:flex;justify-content:space-between;align-items:baseline;gap:15px;flex-wrap:wrap;font-size:13px}
+.nature-history-chart-label span{font-size:11px;color:#647b69}
+#nature-history-chart{width:100%;min-height:245px}
+#nature-history-chart svg{display:block;width:100%;max-height:345px}
+.nature-history-status{font-size:12px;color:#5f7663;line-height:1.65}
+.nature-history-under{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:15px 0}
+.nature-history-under summary{cursor:pointer;font-weight:700;font-size:13px;color:#21573f}
+.nature-history-under a{font-size:12px;font-weight:700;color:#21573f}
+.nature-history-table{border-collapse:collapse;min-width:460px;font-size:12px}
+.nature-history-table td,.nature-history-table th{padding:9px 12px;border-bottom:1px solid #dfe5dc;text-align:left}
+.nature-history-caution{margin:20px 0 0;border-left:3px solid #c19b4e;background:#fbf8ee;border-radius:3px;padding:17px;font-size:12px;line-height:1.75;color:#62543c}
+.nature-history-caution p{margin-bottom:0}
+.nature-history-caution a{color:#476644}
+@media(max-width:760px){.nature-history-controls label{min-width:100%;width:100%}.nature-history-chart-shell{padding:10px}.nature-history-table{min-width:390px}.nature-history-chart-label span{display:block}}

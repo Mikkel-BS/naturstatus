@@ -1,0 +1,1016 @@
+{
+  "schema_version": 1,
+  "metric": "nature_index_ecological_condition",
+  "published_edition": "Naturindeks for Norge 2025",
+  "source_doi": "https://doi.org/10.21345/gfbt-pr39",
+  "source_home": "https://www.naturindeks.no/DownloadData",
+  "license": "CC BY 4.0",
+  "observed_years": [
+    2000,
+    2010,
+    2014,
+    2019,
+    2024
+  ],
+  "areas": [
+    "Hele Norge",
+    "Øst-Norge",
+    "Sør-Norge",
+    "Vest-Norge",
+    "Midt-Norge",
+    "Nord-Norge"
+  ],
+  "methodology": "Indeks fra 0 til 1: økologisk tilstand, ikke verneandel. Fem observerte referanseår, ikke årlig interpolasjon. Intervaller er kildens 95 % konfidensgrenser. Resultatene for 2025-utgaven er modellberegninger for siste referanseår 2024.",
+  "ecosystems": {
+    "forest": {
+      "label": "Skog",
+      "source_id": 8,
+      "areas": {
+        "Hele Norge": [
+          {
+            "year": 2000,
+            "median": 0.388,
+            "lower95": 0.367,
+            "upper95": 0.409
+          },
+          {
+            "year": 2010,
+            "median": 0.395,
+            "lower95": 0.382,
+            "upper95": 0.408
+          },
+          {
+            "year": 2014,
+            "median": 0.395,
+            "lower95": 0.382,
+            "upper95": 0.408
+          },
+          {
+            "year": 2019,
+            "median": 0.42,
+            "lower95": 0.409,
+            "upper95": 0.434
+          },
+          {
+            "year": 2024,
+            "median": 0.447,
+            "lower95": 0.435,
+            "upper95": 0.46
+          }
+        ],
+        "Øst-Norge": [
+          {
+            "year": 2000,
+            "median": 0.367,
+            "lower95": 0.34,
+            "upper95": 0.391
+          },
+          {
+            "year": 2010,
+            "median": 0.382,
+            "lower95": 0.366,
+            "upper95": 0.396
+          },
+          {
+            "year": 2014,
+            "median": 0.384,
+            "lower95": 0.368,
+            "upper95": 0.4
+          },
+          {
+            "year": 2019,
+            "median": 0.411,
+            "lower95": 0.395,
+            "upper95": 0.429
+          },
+          {
+            "year": 2024,
+            "median": 0.429,
+            "lower95": 0.414,
+            "upper95": 0.445
+          }
+        ],
+        "Sør-Norge": [
+          {
+            "year": 2000,
+            "median": 0.397,
+            "lower95": 0.367,
+            "upper95": 0.423
+          },
+          {
+            "year": 2010,
+            "median": 0.425,
+            "lower95": 0.407,
+            "upper95": 0.443
+          },
+          {
+            "year": 2014,
+            "median": 0.423,
+            "lower95": 0.406,
+            "upper95": 0.439
+          },
+          {
+            "year": 2019,
+            "median": 0.447,
+            "lower95": 0.43,
+            "upper95": 0.464
+          },
+          {
+            "year": 2024,
+            "median": 0.471,
+            "lower95": 0.453,
+            "upper95": 0.489
+          }
+        ],
+        "Vest-Norge": [
+          {
+            "year": 2000,
+            "median": 0.386,
+            "lower95": 0.344,
+            "upper95": 0.424
+          },
+          {
+            "year": 2010,
+            "median": 0.384,
+            "lower95": 0.362,
+            "upper95": 0.405
+          },
+          {
+            "year": 2014,
+            "median": 0.382,
+            "lower95": 0.363,
+            "upper95": 0.401
+          },
+          {
+            "year": 2019,
+            "median": 0.396,
+            "lower95": 0.377,
+            "upper95": 0.415
+          },
+          {
+            "year": 2024,
+            "median": 0.43,
+            "lower95": 0.413,
+            "upper95": 0.449
+          }
+        ],
+        "Midt-Norge": [
+          {
+            "year": 2000,
+            "median": 0.4,
+            "lower95": 0.361,
+            "upper95": 0.43
+          },
+          {
+            "year": 2010,
+            "median": 0.407,
+            "lower95": 0.391,
+            "upper95": 0.423
+          },
+          {
+            "year": 2014,
+            "median": 0.404,
+            "lower95": 0.388,
+            "upper95": 0.419
+          },
+          {
+            "year": 2019,
+            "median": 0.425,
+            "lower95": 0.409,
+            "upper95": 0.441
+          },
+          {
+            "year": 2024,
+            "median": 0.45,
+            "lower95": 0.434,
+            "upper95": 0.468
+          }
+        ],
+        "Nord-Norge": [
+          {
+            "year": 2000,
+            "median": 0.408,
+            "lower95": 0.359,
+            "upper95": 0.453
+          },
+          {
+            "year": 2010,
+            "median": 0.389,
+            "lower95": 0.362,
+            "upper95": 0.414
+          },
+          {
+            "year": 2014,
+            "median": 0.392,
+            "lower95": 0.371,
+            "upper95": 0.411
+          },
+          {
+            "year": 2019,
+            "median": 0.425,
+            "lower95": 0.405,
+            "upper95": 0.443
+          },
+          {
+            "year": 2024,
+            "median": 0.461,
+            "lower95": 0.443,
+            "upper95": 0.48
+          }
+        ]
+      }
+    },
+    "mountains": {
+      "label": "Fjell",
+      "source_id": 2,
+      "areas": {
+        "Hele Norge": [
+          {
+            "year": 2000,
+            "median": 0.553,
+            "lower95": 0.526,
+            "upper95": 0.577
+          },
+          {
+            "year": 2010,
+            "median": 0.562,
+            "lower95": 0.533,
+            "upper95": 0.591
+          },
+          {
+            "year": 2014,
+            "median": 0.535,
+            "lower95": 0.514,
+            "upper95": 0.557
+          },
+          {
+            "year": 2019,
+            "median": 0.497,
+            "lower95": 0.475,
+            "upper95": 0.514
+          },
+          {
+            "year": 2024,
+            "median": 0.569,
+            "lower95": 0.542,
+            "upper95": 0.596
+          }
+        ],
+        "Øst-Norge": [
+          {
+            "year": 2000,
+            "median": 0.482,
+            "lower95": 0.441,
+            "upper95": 0.521
+          },
+          {
+            "year": 2010,
+            "median": 0.535,
+            "lower95": 0.465,
+            "upper95": 0.608
+          },
+          {
+            "year": 2014,
+            "median": 0.485,
+            "lower95": 0.442,
+            "upper95": 0.536
+          },
+          {
+            "year": 2019,
+            "median": 0.443,
+            "lower95": 0.418,
+            "upper95": 0.47
+          },
+          {
+            "year": 2024,
+            "median": 0.452,
+            "lower95": 0.432,
+            "upper95": 0.472
+          }
+        ],
+        "Sør-Norge": [
+          {
+            "year": 2000,
+            "median": 0.497,
+            "lower95": 0.385,
+            "upper95": 0.561
+          },
+          {
+            "year": 2010,
+            "median": 0.54,
+            "lower95": 0.417,
+            "upper95": 0.618
+          },
+          {
+            "year": 2014,
+            "median": 0.432,
+            "lower95": 0.393,
+            "upper95": 0.476
+          },
+          {
+            "year": 2019,
+            "median": 0.428,
+            "lower95": 0.385,
+            "upper95": 0.469
+          },
+          {
+            "year": 2024,
+            "median": 0.443,
+            "lower95": 0.399,
+            "upper95": 0.485
+          }
+        ],
+        "Vest-Norge": [
+          {
+            "year": 2000,
+            "median": 0.509,
+            "lower95": 0.448,
+            "upper95": 0.566
+          },
+          {
+            "year": 2010,
+            "median": 0.518,
+            "lower95": 0.467,
+            "upper95": 0.574
+          },
+          {
+            "year": 2014,
+            "median": 0.458,
+            "lower95": 0.421,
+            "upper95": 0.495
+          },
+          {
+            "year": 2019,
+            "median": 0.409,
+            "lower95": 0.379,
+            "upper95": 0.44
+          },
+          {
+            "year": 2024,
+            "median": 0.452,
+            "lower95": 0.4,
+            "upper95": 0.501
+          }
+        ],
+        "Midt-Norge": [
+          {
+            "year": 2000,
+            "median": 0.635,
+            "lower95": 0.591,
+            "upper95": 0.669
+          },
+          {
+            "year": 2010,
+            "median": 0.621,
+            "lower95": 0.571,
+            "upper95": 0.67
+          },
+          {
+            "year": 2014,
+            "median": 0.583,
+            "lower95": 0.548,
+            "upper95": 0.619
+          },
+          {
+            "year": 2019,
+            "median": 0.544,
+            "lower95": 0.513,
+            "upper95": 0.573
+          },
+          {
+            "year": 2024,
+            "median": 0.577,
+            "lower95": 0.539,
+            "upper95": 0.612
+          }
+        ],
+        "Nord-Norge": [
+          {
+            "year": 2000,
+            "median": 0.573,
+            "lower95": 0.54,
+            "upper95": 0.602
+          },
+          {
+            "year": 2010,
+            "median": 0.571,
+            "lower95": 0.534,
+            "upper95": 0.605
+          },
+          {
+            "year": 2014,
+            "median": 0.573,
+            "lower95": 0.54,
+            "upper95": 0.605
+          },
+          {
+            "year": 2019,
+            "median": 0.534,
+            "lower95": 0.499,
+            "upper95": 0.563
+          },
+          {
+            "year": 2024,
+            "median": 0.651,
+            "lower95": 0.607,
+            "upper95": 0.698
+          }
+        ]
+      }
+    },
+    "wetlands": {
+      "label": "Våtmark",
+      "source_id": 7,
+      "areas": {
+        "Hele Norge": [
+          {
+            "year": 2000,
+            "median": 0.715,
+            "lower95": 0.695,
+            "upper95": 0.735
+          },
+          {
+            "year": 2010,
+            "median": 0.668,
+            "lower95": 0.642,
+            "upper95": 0.692
+          },
+          {
+            "year": 2014,
+            "median": 0.659,
+            "lower95": 0.636,
+            "upper95": 0.68
+          },
+          {
+            "year": 2019,
+            "median": 0.66,
+            "lower95": 0.641,
+            "upper95": 0.676
+          },
+          {
+            "year": 2024,
+            "median": 0.644,
+            "lower95": 0.624,
+            "upper95": 0.66
+          }
+        ],
+        "Øst-Norge": [
+          {
+            "year": 2000,
+            "median": 0.735,
+            "lower95": 0.704,
+            "upper95": 0.766
+          },
+          {
+            "year": 2010,
+            "median": 0.687,
+            "lower95": 0.648,
+            "upper95": 0.723
+          },
+          {
+            "year": 2014,
+            "median": 0.663,
+            "lower95": 0.628,
+            "upper95": 0.697
+          },
+          {
+            "year": 2019,
+            "median": 0.675,
+            "lower95": 0.643,
+            "upper95": 0.7
+          },
+          {
+            "year": 2024,
+            "median": 0.667,
+            "lower95": 0.635,
+            "upper95": 0.692
+          }
+        ],
+        "Sør-Norge": [
+          {
+            "year": 2000,
+            "median": 0.644,
+            "lower95": 0.559,
+            "upper95": 0.696
+          },
+          {
+            "year": 2010,
+            "median": 0.579,
+            "lower95": 0.496,
+            "upper95": 0.631
+          },
+          {
+            "year": 2014,
+            "median": 0.525,
+            "lower95": 0.494,
+            "upper95": 0.554
+          },
+          {
+            "year": 2019,
+            "median": 0.512,
+            "lower95": 0.486,
+            "upper95": 0.533
+          },
+          {
+            "year": 2024,
+            "median": 0.492,
+            "lower95": 0.448,
+            "upper95": 0.523
+          }
+        ],
+        "Vest-Norge": [
+          {
+            "year": 2000,
+            "median": 0.626,
+            "lower95": 0.571,
+            "upper95": 0.668
+          },
+          {
+            "year": 2010,
+            "median": 0.552,
+            "lower95": 0.507,
+            "upper95": 0.586
+          },
+          {
+            "year": 2014,
+            "median": 0.51,
+            "lower95": 0.468,
+            "upper95": 0.554
+          },
+          {
+            "year": 2019,
+            "median": 0.476,
+            "lower95": 0.445,
+            "upper95": 0.499
+          },
+          {
+            "year": 2024,
+            "median": 0.483,
+            "lower95": 0.437,
+            "upper95": 0.523
+          }
+        ],
+        "Midt-Norge": [
+          {
+            "year": 2000,
+            "median": 0.755,
+            "lower95": 0.735,
+            "upper95": 0.775
+          },
+          {
+            "year": 2010,
+            "median": 0.716,
+            "lower95": 0.688,
+            "upper95": 0.743
+          },
+          {
+            "year": 2014,
+            "median": 0.703,
+            "lower95": 0.677,
+            "upper95": 0.728
+          },
+          {
+            "year": 2019,
+            "median": 0.704,
+            "lower95": 0.68,
+            "upper95": 0.725
+          },
+          {
+            "year": 2024,
+            "median": 0.694,
+            "lower95": 0.67,
+            "upper95": 0.715
+          }
+        ],
+        "Nord-Norge": [
+          {
+            "year": 2000,
+            "median": 0.691,
+            "lower95": 0.674,
+            "upper95": 0.712
+          },
+          {
+            "year": 2010,
+            "median": 0.645,
+            "lower95": 0.607,
+            "upper95": 0.679
+          },
+          {
+            "year": 2014,
+            "median": 0.667,
+            "lower95": 0.644,
+            "upper95": 0.69
+          },
+          {
+            "year": 2019,
+            "median": 0.666,
+            "lower95": 0.646,
+            "upper95": 0.685
+          },
+          {
+            "year": 2024,
+            "median": 0.636,
+            "lower95": 0.614,
+            "upper95": 0.653
+          }
+        ]
+      }
+    },
+    "open_lowland": {
+      "label": "Åpent lavland",
+      "source_id": 9,
+      "areas": {
+        "Hele Norge": [
+          {
+            "year": 2000,
+            "median": 0.519,
+            "lower95": 0.473,
+            "upper95": 0.565
+          },
+          {
+            "year": 2010,
+            "median": 0.47,
+            "lower95": 0.425,
+            "upper95": 0.513
+          },
+          {
+            "year": 2014,
+            "median": 0.445,
+            "lower95": 0.4,
+            "upper95": 0.492
+          },
+          {
+            "year": 2019,
+            "median": 0.45,
+            "lower95": 0.406,
+            "upper95": 0.491
+          },
+          {
+            "year": 2024,
+            "median": 0.445,
+            "lower95": 0.413,
+            "upper95": 0.477
+          }
+        ],
+        "Øst-Norge": [
+          {
+            "year": 2000,
+            "median": 0.51,
+            "lower95": 0.444,
+            "upper95": 0.572
+          },
+          {
+            "year": 2010,
+            "median": 0.487,
+            "lower95": 0.429,
+            "upper95": 0.549
+          },
+          {
+            "year": 2014,
+            "median": 0.484,
+            "lower95": 0.423,
+            "upper95": 0.544
+          },
+          {
+            "year": 2019,
+            "median": 0.471,
+            "lower95": 0.412,
+            "upper95": 0.53
+          },
+          {
+            "year": 2024,
+            "median": 0.463,
+            "lower95": 0.438,
+            "upper95": 0.491
+          }
+        ],
+        "Sør-Norge": [
+          {
+            "year": 2000,
+            "median": 0.53,
+            "lower95": 0.479,
+            "upper95": 0.582
+          },
+          {
+            "year": 2010,
+            "median": 0.483,
+            "lower95": 0.43,
+            "upper95": 0.533
+          },
+          {
+            "year": 2014,
+            "median": 0.471,
+            "lower95": 0.424,
+            "upper95": 0.514
+          },
+          {
+            "year": 2019,
+            "median": 0.47,
+            "lower95": 0.425,
+            "upper95": 0.518
+          },
+          {
+            "year": 2024,
+            "median": 0.45,
+            "lower95": 0.424,
+            "upper95": 0.479
+          }
+        ],
+        "Vest-Norge": [
+          {
+            "year": 2000,
+            "median": 0.441,
+            "lower95": 0.381,
+            "upper95": 0.495
+          },
+          {
+            "year": 2010,
+            "median": 0.375,
+            "lower95": 0.323,
+            "upper95": 0.427
+          },
+          {
+            "year": 2014,
+            "median": 0.343,
+            "lower95": 0.296,
+            "upper95": 0.392
+          },
+          {
+            "year": 2019,
+            "median": 0.358,
+            "lower95": 0.311,
+            "upper95": 0.399
+          },
+          {
+            "year": 2024,
+            "median": 0.386,
+            "lower95": 0.334,
+            "upper95": 0.45
+          }
+        ],
+        "Midt-Norge": [
+          {
+            "year": 2000,
+            "median": 0.5,
+            "lower95": 0.44,
+            "upper95": 0.559
+          },
+          {
+            "year": 2010,
+            "median": 0.452,
+            "lower95": 0.389,
+            "upper95": 0.505
+          },
+          {
+            "year": 2014,
+            "median": 0.408,
+            "lower95": 0.348,
+            "upper95": 0.468
+          },
+          {
+            "year": 2019,
+            "median": 0.411,
+            "lower95": 0.353,
+            "upper95": 0.467
+          },
+          {
+            "year": 2024,
+            "median": 0.407,
+            "lower95": 0.362,
+            "upper95": 0.454
+          }
+        ],
+        "Nord-Norge": [
+          {
+            "year": 2000,
+            "median": 0.579,
+            "lower95": 0.483,
+            "upper95": 0.676
+          },
+          {
+            "year": 2010,
+            "median": 0.528,
+            "lower95": 0.437,
+            "upper95": 0.617
+          },
+          {
+            "year": 2014,
+            "median": 0.51,
+            "lower95": 0.422,
+            "upper95": 0.599
+          },
+          {
+            "year": 2019,
+            "median": 0.515,
+            "lower95": 0.425,
+            "upper95": 0.6
+          },
+          {
+            "year": 2024,
+            "median": 0.493,
+            "lower95": 0.447,
+            "upper95": 0.537
+          }
+        ]
+      }
+    },
+    "freshwater": {
+      "label": "Ferskvann",
+      "source_id": 1,
+      "areas": {
+        "Hele Norge": [
+          {
+            "year": 2000,
+            "median": 0.792,
+            "lower95": 0.642,
+            "upper95": 0.858
+          },
+          {
+            "year": 2010,
+            "median": 0.77,
+            "lower95": 0.704,
+            "upper95": 0.816
+          },
+          {
+            "year": 2014,
+            "median": 0.776,
+            "lower95": 0.734,
+            "upper95": 0.802
+          },
+          {
+            "year": 2019,
+            "median": 0.79,
+            "lower95": 0.753,
+            "upper95": 0.815
+          },
+          {
+            "year": 2024,
+            "median": 0.789,
+            "lower95": 0.752,
+            "upper95": 0.814
+          }
+        ],
+        "Øst-Norge": [
+          {
+            "year": 2000,
+            "median": 0.774,
+            "lower95": 0.639,
+            "upper95": 0.836
+          },
+          {
+            "year": 2010,
+            "median": 0.743,
+            "lower95": 0.681,
+            "upper95": 0.79
+          },
+          {
+            "year": 2014,
+            "median": 0.75,
+            "lower95": 0.697,
+            "upper95": 0.781
+          },
+          {
+            "year": 2019,
+            "median": 0.765,
+            "lower95": 0.715,
+            "upper95": 0.802
+          },
+          {
+            "year": 2024,
+            "median": 0.773,
+            "lower95": 0.721,
+            "upper95": 0.809
+          }
+        ],
+        "Sør-Norge": [
+          {
+            "year": 2000,
+            "median": 0.755,
+            "lower95": 0.582,
+            "upper95": 0.831
+          },
+          {
+            "year": 2010,
+            "median": 0.725,
+            "lower95": 0.648,
+            "upper95": 0.786
+          },
+          {
+            "year": 2014,
+            "median": 0.749,
+            "lower95": 0.696,
+            "upper95": 0.783
+          },
+          {
+            "year": 2019,
+            "median": 0.765,
+            "lower95": 0.71,
+            "upper95": 0.802
+          },
+          {
+            "year": 2024,
+            "median": 0.771,
+            "lower95": 0.72,
+            "upper95": 0.806
+          }
+        ],
+        "Vest-Norge": [
+          {
+            "year": 2000,
+            "median": 0.786,
+            "lower95": 0.621,
+            "upper95": 0.861
+          },
+          {
+            "year": 2010,
+            "median": 0.748,
+            "lower95": 0.654,
+            "upper95": 0.809
+          },
+          {
+            "year": 2014,
+            "median": 0.758,
+            "lower95": 0.707,
+            "upper95": 0.791
+          },
+          {
+            "year": 2019,
+            "median": 0.776,
+            "lower95": 0.721,
+            "upper95": 0.811
+          },
+          {
+            "year": 2024,
+            "median": 0.779,
+            "lower95": 0.732,
+            "upper95": 0.815
+          }
+        ],
+        "Midt-Norge": [
+          {
+            "year": 2000,
+            "median": 0.789,
+            "lower95": 0.665,
+            "upper95": 0.848
+          },
+          {
+            "year": 2010,
+            "median": 0.785,
+            "lower95": 0.72,
+            "upper95": 0.835
+          },
+          {
+            "year": 2014,
+            "median": 0.763,
+            "lower95": 0.715,
+            "upper95": 0.794
+          },
+          {
+            "year": 2019,
+            "median": 0.791,
+            "lower95": 0.745,
+            "upper95": 0.826
+          },
+          {
+            "year": 2024,
+            "median": 0.778,
+            "lower95": 0.732,
+            "upper95": 0.814
+          }
+        ],
+        "Nord-Norge": [
+          {
+            "year": 2000,
+            "median": 0.827,
+            "lower95": 0.675,
+            "upper95": 0.904
+          },
+          {
+            "year": 2010,
+            "median": 0.814,
+            "lower95": 0.72,
+            "upper95": 0.876
+          },
+          {
+            "year": 2014,
+            "median": 0.825,
+            "lower95": 0.758,
+            "upper95": 0.867
+          },
+          {
+            "year": 2019,
+            "median": 0.827,
+            "lower95": 0.784,
+            "upper95": 0.861
+          },
+          {
+            "year": 2024,
+            "median": 0.82,
+            "lower95": 0.774,
+            "upper95": 0.855
+          }
+        ]
+      }
+    }
+  }
+}

@@ -22,3 +22,15 @@ for number in (0,4):
     print(f"Feature {number}: CORS={cors}, fields={list(payload.get('features',[{}])[0].get('attributes',{}))[:25]}")
     assert "features" in payload and not payload.get("error")
     assert cors in ("*","https://mikkel-bs.github.io")
+
+# A real WMS GetMap request confirms the configured names, CRS, and image transport.
+for layer in ('naturvern_omrade','foreslatt_naturvern_omrade'):
+    params={'service':'WMS','version':'1.3.0','request':'GetMap','layers':layer,
+            'styles':'','crs':'EPSG:3857','bbox':'0,8000000,1500000,10000000',
+            'width':'256','height':'256','format':'image/png','transparent':'true'}
+    with urllib.request.urlopen(urllib.request.Request(WMS+'?'+urllib.parse.urlencode(params),
+        headers={'User-Agent':'Naturstatus/0.2'}),timeout=45) as r:
+        mime=r.headers.get('Content-Type','')
+        data=r.read()
+    print('GetMap',layer,mime,len(data))
+    assert mime.startswith('image/png') and data[:8] == b'\\x89PNG\\r\\n\\x1a\\n' and len(data)>100

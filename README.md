@@ -10,6 +10,12 @@
 
 Målet om 30 % i 2030 inkluderer kvalifiserte OECM-tiltak og må ikke tolkes som likestilt med andel formelt vern. En økning i vern sier heller ikke alene noe sikkert om naturtilstand eller effektiv forvaltning.
 
+## Gjeldende vernekart
+
+Kartet viser **nåværende** vern og formelt foreslått vern fra Miljødirektoratets WMS (`naturvern_omrade` og `foreslatt_naturvern_omrade`). Klikk på kartet henter opplysninger med ArcGIS FeatureServer (lag 0 og 4). Kartverket leverer bakgrunnskart. Kartet er ikke en tidsmaskin eller en uttømmende beskrivelse av økologisk tilstand. Det viser ikke planlagt utbygging.
+
+Kildenes ytelse og tilgjengelighet påvirker kartet. Importen av statistikk er uavhengig av GIS-tjenestene. Automatiske PR-tester kontrollerer WMS, CORS, FeatureServer og et kartbilde.
+
 ## Lokal utvikling
 
 Ingen byggavhengigheter for nettsiden:

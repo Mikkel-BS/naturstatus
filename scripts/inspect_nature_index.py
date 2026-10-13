@@ -59,21 +59,12 @@ for u in paths:
  except Exception as e:print('ALT ERROR',u,repr(e))
 
 
-import re
-base='https://www.naturindeks.no'
-for path in ['/Ecosystems/skog','/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.js']:
- try:
-  with urllib.request.urlopen(base+path,timeout=30) as rr: body=rr.read(1000000).decode('utf-8','replace')
-  print('ASSET',path,'size',len(body))
-  for needle in ['api/','/Api/','fetch(','axios','IndexValues','getData','dataUrl','2000','2010','2014','2019','2024']:
-   matches=[m.start() for m in re.finditer(re.escape(needle),body,re.IGNORECASE)]
-   print('NEEDLE',needle,'MATCHES',len(matches))
-   for i in matches[:8]:print('ASSET MATCH',body[max(0,i-160):i+240][:400])
- except Exception as e:print('ASSET ERROR',path,repr(e))
 
-url='https://www.naturindeks.no/Ecosystems/skog'
-with urllib.request.urlopen(url,timeout=25) as rr: body=rr.read(250000).decode('utf-8','replace')
-for needle in ['chartData','chartSeries','2024','0.447','0,447','0.435','ecosystemId','jsonData','props','app.mount','createApp','JSON.parse','window.']:
- hits=[m.start() for m in re.finditer(re.escape(needle),body,re.I)]
- print('HTML NEEDLE',needle,len(hits))
- for i in hits[:4]:print('HTML SEGMENT',repr(body[max(0,i-220):i+320]))
+base="https://www.naturindeks.no"
+with urllib.request.urlopen(base+"/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.js",timeout=25) as r: body=r.read(70000).decode("utf-8","replace")
+print('JS FRONT',body[:6500])
+for needle in ['chartData','const F','const l=F','GetEcosystem','getEcosystem','/Ecosystem','axios','fetch','chartSeries']:
+ import re
+ found=[m.start() for m in re.finditer(re.escape(needle),body,re.I)]
+ print('HITS',needle,len(found))
+ for i in found[:5]:print('JS MATCH',body[max(0,i-340):i+460])

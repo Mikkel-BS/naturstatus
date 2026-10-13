@@ -4,6 +4,8 @@
   "source": "https://www.ssb.no/statbank/table/08936/",
   "table": "08936",
   "method": "For hver kategori: nasjonal sum minus Svalbard fra og med 2009, og Jan Mayen fra og med 2012. Referanseverdi fra SSBs arkiverte fastlandstall for 2009 er kontrollert.",
+  "historical_caveat": "SSBs 2009-total inkluderer Svalbard; uten korreksjon oppstår en kunstig topp i 2009. Endringer i antall km² beskriver ikke økologisk tilstand.",
+  "historical_reference": "https://www.ssb.no/natur-og-miljo/statistikker/arealvern/arkiv/2010-07-08",
   "note": "Areal i km², ikke andel. Territorielle summer er kontrollert mot SSB.",
   "series": {
     "total": [
@@ -147,11 +149,11 @@
       },
       {
         "year": 2001,
-        "km2": 14930
+        "km2": 14930.0
       },
       {
         "year": 2002,
-        "km2": 17022
+        "km2": 17022.0
       },
       {
         "year": 2003,
@@ -159,7 +161,7 @@
       },
       {
         "year": 2004,
-        "km2": 21650
+        "km2": 21650.0
       },
       {
         "year": 2005,
@@ -353,11 +355,11 @@
       },
       {
         "year": 2001,
-        "km2": 2995
+        "km2": 2995.0
       },
       {
         "year": 2002,
-        "km2": 3220
+        "km2": 3220.0
       },
       {
         "year": 2003,
@@ -365,7 +367,7 @@
       },
       {
         "year": 2004,
-        "km2": 3418
+        "km2": 3418.0
       },
       {
         "year": 2005,
@@ -559,11 +561,11 @@
       },
       {
         "year": 2001,
-        "km2": 8278
+        "km2": 8278.0
       },
       {
         "year": 2002,
-        "km2": 11393
+        "km2": 11393.0
       },
       {
         "year": 2003,
@@ -571,7 +573,7 @@
       },
       {
         "year": 2004,
-        "km2": 14071
+        "km2": 14071.0
       },
       {
         "year": 2005,
@@ -658,7 +660,5 @@
         "km2": 17221.2
       }
     ]
-  },
-  "historical_caveat": "SSBs 2009-total inkluderer Svalbard; uten korreksjon oppstår en kunstig topp i 2009. Endringer i antall km² beskriver ikke økologisk tilstand.",
-  "historical_reference": "https://www.ssb.no/natur-og-miljo/statistikker/arealvern/arkiv/2010-07-08"
+  }
 }

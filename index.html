@@ -31,6 +31,33 @@
 </div></div>
 <p class="ecosystem-caveat">For våtmark, fjell, kulturlandskap/åpent lavland og elver/innsjøer viser vi <strong>omtrentlige tall fra regjeringens naturmelding (2024)</strong>. Skogtallene kommer fra NIBIO (1. januar 2025). <strong>Ulike referanseår, arealdefinisjoner og metoder gjør at prosentene ikke kan rangeres ukritisk.</strong> For åpent lavland og ferskvann bruker naturindeksen andre avgrensninger enn verneandelen. Se <a href="https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6" target="_blank" rel="noopener noreferrer">naturmeldingens kapittel 6.3.2</a>. Indikatorene kan ikke brukes direkte til å beregne målet på 30 % for hele Norge.</p>
 </section>
+<section class="panel nature-history-section" id="naturtilstand-historikk">
+<div class="section-head"><div><p class="eyebrow">NATURINDEKS 2025 · REFERANSEÅR 2000–2024</p>
+<h2>Har naturtilstanden blitt bedre eller dårligere?</h2></div>
+<a id="nature-history-source" class="minor" href="https://doi.org/10.21345/gfbt-pr39" target="_blank" rel="noopener noreferrer">Kildedata fra Miljødirektoratet ↗</a></div>
+<p class="intro">Velg økosystem og region for å sammenligne faktisk beregnede naturindeksverdier, med <strong>95 % konfidensintervaller</strong>. Dette er <strong>biologisk mangfold og tilstand (0–1), ikke vernet areal</strong>. Datasettet omfatter fem referanseår, ikke årlige observasjoner. 2025-utgaven har 2024 som nyeste referanseår.</p>
+<div id="ecosystem-history" class="nature-history-wrap">
+<div class="nature-history-controls">
+<label for="history-ecosystem">Økosystem
+<select id="history-ecosystem" disabled><option>Henter økosystemer …</option></select></label>
+<label for="history-area">Område
+<select id="history-area" disabled><option>Henter regioner …</option></select></label></div>
+<p id="nature-history-summary" class="series-summary" aria-live="polite">Henter de historiske verdiene fra Naturindeks 2025 …</p>
+<div class="nature-history-chart-shell">
+<div class="nature-history-chart-label"><strong>Naturindeks</strong><span>0 = sterkt redusert · 1 = intakt referansetilstand</span></div>
+<div id="nature-history-chart" role="img" aria-label="Naturindeks 2000–2024 med usikkerhetsintervaller">
+<svg viewBox="0 0 820 310" aria-hidden="true"><text x="410" y="150" fill="currentColor" text-anchor="middle">Laster offisielle data …</text></svg>
+</div>
+<p id="nature-history-status" class="nature-history-status" role="status" aria-live="polite">Leser datagrunnlag …</p></div>
+<div class="nature-history-under"><details><summary>Se tallgrunnlaget og usikkerheten som tabell</summary>
+<div class="data-scroll"><table class="nature-history-table"><thead><tr><th>År</th><th>Naturindeks</th><th>Nedre 95 %</th><th>Øvre 95 %</th></tr></thead>
+<tbody id="nature-history-rows"><tr><td colspan="4">Laster data …</td></tr></tbody></table></div></details>
+<a id="nature-history-csv" href="./data/nature_index_history.csv" download hidden>Last ned alle historiske økosystemverdier (CSV) ↓</a></div>
+</div>
+<div class="nature-history-caution">
+<strong>Hva viser ikke tidsserien?</strong> Endringene må vurderes med hensyn til usikkerhet og metodikk. Vi interpolerer ikke mellom referanseårene, og en observert forskjell er ikke automatisk statistisk signifikant. Dette er ikke historiske verneandeler; en egen areal- og vernedataanalyse er nødvendig for å måle hvordan representativt vern har utviklet seg.
+<p>NIBIO viser egne <a href="https://www.skogbruk.nibio.no/verneomrader" target="_blank" rel="noopener noreferrer">figurer over skogareal i verneområder 1990–2022</a>, men disse er ikke brukt som numerisk tidsserie her fordi sammenlignbare råverdier ikke er integrert og kvalitetssikret.</p>
+</div></section>
 <section class="panel" id="kart">
 <div class="section-head"><div><p class="eyebrow">GJELDENDE KARTLAG · NATURBASE</p><h2>Hvor ligger verneområdene?</h2></div><a class="minor" href="https://www.miljodirektoratet.no/tjenester/naturbase/" target="_blank" rel="noopener noreferrer">Naturbase / Miljødirektoratet ↗</a></div>
 <p class="intro">Kartet viser de <strong>nåværende grensene</strong> for vedtatt og formelt foreslått vern. Det er ikke en rekonstruksjon av historiske grenser. Forslag er ikke det samme som rettslig vern.</p>
@@ -40,4 +67,4 @@
 </section>
 <section class="split"><article class="panel"><p class="eyebrow">RAMMEVERKET</p><h2>Hva har Norge lovet?</h2><p>Norges nasjonale handlingsplan for naturmangfold legger opp til bevaring av minst 30 % av landarealene innen 2030, inkludert Svalbard og Jan Mayen, gjennom vern og andre effektive arealbaserte tiltak.</p><p>Et høyere samlet vernet areal betyr ikke nødvendigvis bedre økologisk tilstand. Kvalitet, representativitet og effektiv forvaltning er også viktige.</p><a class="minor" href="https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/" target="_blank" rel="noopener noreferrer">Les naturmeldingen ↗</a></article><article class="panel"><p class="eyebrow">KILDEKRITIKK</p><h2>Ikke bland prosentene</h2><div class="facts"><div><strong>17,8 %</strong><span>Formelt vern på fastlandet (2025)</span></div><div><strong>25,8 %</strong><span>Formelt vern i hele Norge, inkl. Svalbard og Jan Mayen (oppgitt mars 2026)</span></div><div><strong>30 %</strong><span>Nasjonalt mål, også med kvalifiserte OECM-tiltak</span></div></div><p>Disse prosentene har ulik geografisk dekning og til dels ulik definisjon. Vi summerer dem ikke.</p></article></section>
 <section class="panel method" id="metode"><p class="eyebrow">METODE & ÅPENHET</p><h2>Tall som tåler kontroll</h2><p>Vi bruker offentlige kilder og viser referanseår og avgrensning. Vern er ikke det samme som restaurering eller dokumentert god naturtilstand. En nåværende vernegrense kan heller ikke automatisk brukes som historisk grense.</p><ul><li><a href="https://www.ssb.no/statbank/table/08936/" target="_blank" rel="noopener noreferrer">SSB: Vernede områder, tabell 08936</a></li><li><a href="https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/" target="_blank" rel="noopener noreferrer">Meld. St. 35 (2023–2024): Bærekraftig bruk og bevaring av natur</a></li><li><a href="https://github.com/Mikkel-BS/naturstatus" target="_blank" rel="noopener noreferrer">Åpen kildekode og dokumentasjon på GitHub</a></li></ul><p class="method-note">Prosjektet er under utvikling. Vi vil ikke presentere estimater eller manglende verdier som offisiell statistikk. Kildeserien utvides først når automatisk innhenting og kvalitetskontroll er på plass.</p></section>
-</main><footer><div><strong>NATURSTATUS NORGE</strong><span>Et uavhengig, åpent innsynsprosjekt.</span></div><a href="https://github.com/Mikkel-BS/naturstatus" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer><script type="module" src="./app.js"></script><script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script defer src="./map.js"></script><script defer src="./goal.js"></script><script defer src="./ecosystems.js"></script></body></html>
+</main><footer><div><strong>NATURSTATUS NORGE</strong><span>Et uavhengig, åpent innsynsprosjekt.</span></div><a href="https://github.com/Mikkel-BS/naturstatus" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer><script type="module" src="./app.js"></script><script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script defer src="./map.js"></script><script defer src="./goal.js"></script><script defer src="./ecosystems.js"></script><script defer src="./nature_history.js"></script></body></html>

@@ -93,12 +93,9 @@ def build(dataset):
                     raise ValueError(f"Missing Svalbard correction for {purpose}/{year}")
             else:
                 svalbard = 0
-            if year >= 2012:
-                jan_mayen = lookup.get(("22", purpose, year))
-                if jan_mayen is None:
-                    raise ValueError(f"Missing Jan Mayen correction for {purpose}/{year}")
-            else:
-                jan_mayen = 0
+            # Jan Mayen has no parks / other categories in some years:
+            # an empty regional cell is a valid zero, not a missing national total.
+            jan_mayen = (lookup.get(("22", purpose, year)) or 0) if year >= 2012 else 0
             arctic = [svalbard, jan_mayen]
             mainland = round(float(national) - sum(arctic),2)
             if mainland < 0:

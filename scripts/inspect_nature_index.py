@@ -70,3 +70,15 @@ for url in ['https://www.naturindeks.no/Ecosystems/skog','https://www.naturindek
   print('PAGE',url,'len',len(html),'END',html[-1400:])
   Tags().feed(html)
  except Exception as e:print('PAGE ERROR',url,repr(e))
+
+import re
+base='https://www.naturindeks.no'
+for path in ['/Ecosystems/skog','/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.js']:
+ try:
+  with urllib.request.urlopen(base+path,timeout=30) as rr: body=rr.read(1000000).decode('utf-8','replace')
+  print('ASSET',path,'size',len(body))
+  for regex in [r'.{0,150}(?:fetch\\(|axios|/api/|/Api/|getData|IndexValues|natureIndex|NatureIndex).{0,150}',r'.{0,90}(?:2014|2019|2024).{0,90}',r'.{0,100}https?://.{0,140}']:
+   matches=re.findall(regex,body,re.I)
+   print('REGEX',regex,'MATCHES',len(matches))
+   for a in matches[:18]:print('ASSET MATCH',a[:350])
+ except Exception as e:print('ASSET ERROR',path,repr(e))

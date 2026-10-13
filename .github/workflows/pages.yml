@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ['Update official SSB data']
+    types: [completed]
 permissions:
   contents: read
   pages: write
@@ -12,6 +15,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -24,6 +28,7 @@ jobs:
           mkdir -p dist/data
           cp index.html styles.css app.js .nojekyll dist/
           cp data/overview.csv data/historical.json dist/data/
+          if [ -f data/historical.csv ]; then cp data/historical.csv dist/data/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -84,7 +84,19 @@ Både importøren for naturvern (SSB 08936) og for skog (SSB 14591) inngår i de
 
 Naturmeldingen [Meld. St. 35 (2023–2024)](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6) oppgir omtrentlige verneandeler for våtmark, fjell, elver/innsjøer og kulturlandskap/åpent lavland. Dette er **ett publisert tverrsnitt**, ikke en trendserie. Vi presenterer dem ikke som historiske vernekurver.
 
-[Naturindeks for Norge 2025](https://www.naturindeks.no/DownloadData) inneholder sammenlignbare beregnede vurderinger for biologisk mangfold i 2000, 2010, 2014, 2019 og 2024. Dette gjelder *naturtilstand*, ikke *verneandel*. Naturstatus lenker til offisielle økosystemvise historiske analyser, men lager ikke egne historiske indekstall uten å importere og validere disse datapakkene. Etter 2025 er det ikke planlagt samme femårige oppdatering av den samlede naturindeksen.
+[Naturindeks for Norge 2025](https://www.naturindeks.no/DownloadData) inneholder sammenlignbare beregnede vurderinger for biologisk mangfold i 2000, 2010, 2014, 2019 og 2024. Dette gjelder *naturtilstand*, ikke *verneandel*. Naturstatus importerer og validerer den offisielle historiske Nature Index-serien fra samme versjon for fem økosystemer. Etter 2025 er det ikke planlagt samme femårige oppdatering av den samlede naturindeksen.
 
 Det er fremdeles **ikke mulig å fastslå fra Naturstatus** om andelen vernet våtmark, fjell, elver/innsjøer eller kulturlandskap har økt med et bestemt antall prosentpoeng over tid. Dette vil kreve sammenlignbare tidsserieuttrekk eller historiske romlige analyser.
 
+
+## Historisk naturtilstand per økosystem (Naturindeks 2025)
+
+Naturstatus viser den nasjonale og regionale **naturindeksen** for skog, fjell, våtmark, åpent lavland og ferskvann i fem **referanseår: 2000, 2010, 2014, 2019 og 2024**. Den offisielle 2025-utgaven bruker 2024 som siste referanseår. For hver verdi vises 95 % konfidensintervall fra publiserte data. Fem geografiske landsdeler og «Hele Norge» kan velges.
+
+Dette er **tilstand til biologisk mangfold**, ikke hvor stor andel av hvert økosystem som er vernet. Referanseårene er ikke årlig registrering; vi viser punkter uten å tegne interpolerte linjer. Store eller små forskjeller må tolkes i lys av statistisk usikkerhet, endret økologi og metode. Skogvernets utvikling 1990–2022 er foreløpig presentert av NIBIO som figurer, og tallene er ikke digitalisert i denne tjenesten; vi har ikke tolket grafiske kurver som kontrollerte rådata. De økosystemspesifikke verneandelene i 2024/2025 er **øyeblikksbilder**, ikke historiske serier.
+
+Data: [Miljødirektoratet (2025), NI2025: Nature Index Values, CC BY 4.0](https://doi.org/10.21345/gfbt-pr39). Uttrekk via de samme offisielle visnings-API-ene som nettstedet [naturindeks.no](https://www.naturindeks.no/DownloadData) bruker. Alle 150 observasjoner ligger i `data/nature_index_history.json` og `data/nature_index_history.csv`. Attributtene `median`, `lower95`, `upper95` kommer uendret fra `chartSeries` (etter nøkkelnavnendring). `scripts/update_nature_index.py` validerer økosystem-ID, år, region, intervaller og siste referanseår mot eksisterende indeks.
+
+Ved ønske om oppdatering brukes **Actions → Refresh Nature Index history (manual) → Run workflow**. Datasettene oppdateres ikke ukentlig fordi 2025-utgaven er et frosset forskningsprodukt. En senere ny versjon vil kreve metodisk versjonering i stedet for å overskrive historiske tall lydløst.
+
+Valider mot offentlig API med `python scripts/update_nature_index.py --check`. `python -m unittest discover -s tests` verifiserer fullstendighet og matematisk korrekthet uten nettverk.

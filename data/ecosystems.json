@@ -23,7 +23,10 @@
     "publisher": "Miljødirektoratet / Naturindeks for Norge 2025",
     "url": "https://www.miljodirektoratet.no/aktuelt/nyheter/2025/november-2025/ny-naturindeks-norsk-natur-betydelig-redusert/",
     "reference_year": 2025,
-    "range": [0, 1],
+    "range": [
+      0,
+      1
+    ],
     "definition": "Indeks for biologisk mangfold relativt til et referansenivå (1 tilsvarer intakt økosystem), ikke verneandel og ikke direkte måloppnåelse for naturavtalen."
   },
   "ecosystems": [
@@ -40,44 +43,59 @@
       "id": "wetlands",
       "label": "Våtmark",
       "nature_index": 0.64,
-      "protected_percent": null,
-      "protected_status": "not_verified",
-      "coverage_definition": null,
-      "context": "Ingen kvalitetssikret, landsdekkende verneandel for dette økosystemet er lagt inn. Null er ikke det samme som manglende tall."
+      "protected_percent": 16,
+      "protected_status": "published_approximate",
+      "coverage_definition": "Om lag 16 % av våtmark, rapportert i Meld. St. 35 (2023–2024)",
+      "context": "Regjeringen oppga om lag 16 % vernet våtmark i 2024-meldingen. Dette er et eldre, avrundet estimat; det kan ikke automatisk sammenlignes med NIBIOs nyere skogstatistikk.",
+      "protected_source": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6",
+      "protected_report_year": 2024
     },
     {
       "id": "mountains",
       "label": "Fjell",
       "nature_index": 0.57,
-      "protected_percent": null,
-      "protected_status": "not_verified",
-      "coverage_definition": null,
-      "context": "Miljødirektoratet beskriver omfattende vern i fjellområder, men vi presenterer ingen udokumentert prosentandel."
+      "protected_percent": 34,
+      "protected_status": "published_approximate",
+      "coverage_definition": "Om lag 34 % av økosystem fjell, rapportert i Meld. St. 35 (2023–2024)",
+      "context": "Regjeringen oppga om lag 34 % vernet fjell i 2024-meldingen. Høy verneandel dokumenterer ikke alene representativt eller effektivt vern.",
+      "protected_source": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6",
+      "protected_report_year": 2024
     },
     {
       "id": "open_lowland",
       "label": "Åpent lavland",
       "nature_index": 0.45,
-      "protected_percent": null,
-      "protected_status": "not_verified",
-      "coverage_definition": null,
-      "context": "Naturindeksen beskriver biologisk mangfold, men kartlagt formelt vern er ikke her koblet til en landsdekkende arealnevner."
+      "protected_percent": 12,
+      "protected_status": "published_approximate",
+      "coverage_definition": "Om lag 12 % av kulturlandskap og åpent lavland (samlet), rapportert i Meld. St. 35 (2023–2024)",
+      "context": "Regjeringens 12 % gjelder kulturlandskap og åpent lavland samlet, mens naturindeksen beskriver åpent lavland. Dette er ikke identiske økosystemavgrensninger.",
+      "protected_source": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6",
+      "protected_report_year": 2024
     },
     {
       "id": "freshwater",
       "label": "Ferskvann",
       "nature_index": 0.79,
-      "protected_percent": null,
-      "protected_status": "not_verified",
-      "coverage_definition": null,
-      "context": "Ferskvann har egen økologisk indikator. Verneandel må beregnes separat med en dokumentert avgrensning."
+      "protected_percent": 14,
+      "protected_status": "published_approximate",
+      "coverage_definition": "Om lag 14 % av elver og innsjøer (samlet), rapportert i Meld. St. 35 (2023–2024)",
+      "context": "Regjeringens 14 % gjelder elver og innsjøer samlet; naturindeksens ferskvannskategori er en annen indikator og verneandelen er rapportert som et 2024-estimat.",
+      "protected_source": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6",
+      "protected_report_year": 2024
     }
   ],
   "methods": {
-    "comparability": "Naturindeks (0–1) og verneandel (0–100 %) er ulike indikatorer og kan ikke adderes, rangeres på samme skala eller tolkes som lik måloppnåelse.",
-    "coverage": "Kun skog har en verifisert økosystemspesifikk verneandel i denne versjonen. Verneandel for andre økosystemer er ikke tilgjengelig og står eksplisitt som manglende data, ikke 0 %.",
+    "comparability": "Naturindeks (0–1) og verneandel (0–100 %) er ulike indikatorer og kan ikke adderes eller tolkes som lik måloppnåelse. Verneandelene fra NIBIO (2025) og regjeringen (2024) kan heller ikke direkte rangeres uten metodeharmonisering.",
+    "coverage": "Alle fem økosystemene har kildefestede verneandelstall, men bare skogtallene fra NIBIO viser status pr. 1.1.2025. Øvrige prosentandeler er avrundede anslag rapportert i naturmeldingen fra 2024 og kan ikke tolkes som oppdaterte eller fullt sammenlignbare målinger.",
     "geography": "Indikatorene gjelder skog og økosystemer på fastlandet; de er ikke direkte kompatible med Norges 30 %-mål, som inkluderer Svalbard og Jan Mayen.",
-    "mountains_note": "Miljødirektoratet rapporterer høy vernedekning i fjellet og svakere dekning i lavlandet, uten at denne oversikten angir en harmonisert prosentandel.",
-    "mountains_source": "https://www.miljodirektoratet.no/ansvarsomrader/vernet-natur/norges-verneomrader/"
+    "mountains_note": "Naturmeldingen (2024) oppgir ca. 34 % vernet fjell. Dette er en rapportert økosystemandel, ikke en ny GIS-arealberegning.",
+    "mountains_source": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6"
+  },
+  "government_2024": {
+    "publisher": "Klima- og miljødepartementet — Meld. St. 35 (2023–2024), kapittel 6.3.2",
+    "url": "https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6",
+    "publication_year": 2024,
+    "precision": "omtrent",
+    "note": "Oppgitte grove verneandeler fra naturmeldingen (2024). Må ikke omtales som 2025–2026 status eller summeres. Ulikt referansetidspunkt, økosysteminndeling og kartgrunnlag gjør at direkte sammenligning med NIBIOs skogtall kan være misvisende."
   }
 }

@@ -46,3 +46,9 @@ GitHub Pages må aktiveres under **Settings → Pages → Source: GitHub Actions
 [SSB tabell 08936](https://www.ssb.no/statbank/table/08936/), [SSB metode for vernede områder](https://www.ssb.no/natur-og-miljo/areal/statistikk/vernede-omrader), [Meld. St. 35 (2023–2024)](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/).
 
 Historiske SSB-statistikker kan endres ved revisjon og ved endringer i kartgrunnlag og vernelovgivning. Før 2002 er noen arealer basert på verneforskrifter i stedet for digitale vernekart. Datapunkter som tilhører forskjellige kategorier skal ikke summeres uten kontroll av overlapp.
+
+## 2030-mål: oppfølging av norsk landbevaring
+
+`data/targets.json` dokumenterer Norges landmål for 2030 (30 % inkludert Svalbard og Jan Mayen), rapportert andel formelt vern (25,8 %, regjeringens rapport av 3. mars 2026) og **ukjent** kvalifisert OECM-andel. Seksjonen viser nominell differanse på 4,2 prosentpoeng, men fremsetter **ingen prognose for 2030** og påstår ikke at denne differansen er nødvendig nytt vern. Måloppnåelse kan ikke konkluderes fra disse tallene alene.
+
+Endring av målgrunnlaget krever dokumentert kilde og oppdaterte metodetester. SSBs historikk for fastlandet brukes ikke til å ekstrapolere målet med annet geografisk omfang.

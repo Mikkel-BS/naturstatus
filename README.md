@@ -52,3 +52,15 @@ Historiske SSB-statistikker kan endres ved revisjon og ved endringer i kartgrunn
 `data/targets.json` dokumenterer Norges landmål for 2030 (30 % inkludert Svalbard og Jan Mayen), rapportert andel formelt vern (25,8 %, regjeringens rapport av 3. mars 2026) og **ukjent** kvalifisert OECM-andel. Seksjonen viser nominell differanse på 4,2 prosentpoeng, men fremsetter **ingen prognose for 2030** og påstår ikke at denne differansen er nødvendig nytt vern. Måloppnåelse kan ikke konkluderes fra disse tallene alene.
 
 Endring av målgrunnlaget krever dokumentert kilde og oppdaterte metodetester. SSBs historikk for fastlandet brukes ikke til å ekstrapolere målet med annet geografisk omfang.
+
+## Økosystemenes representasjon og tilstand
+
+`data/ecosystems.json` er en kildefestet, manuelt vedlikeholdt indikatoroversikt:
+
+- **Vern:** NIBIOs skogstatistikk pr. 1. januar 2025. Av totalt skogareal ligger 7,6 % i nasjonalparker, naturreservater eller landskapsvernområder (5,6 % i bare de to sistnevnte strengere verneformene). Produktiv skog: 5,9 % for tre former og 4,4 % for de to strengere formene.
+- **Naturindeks 2025:** Miljødirektoratets indikatorverdier mellom 0 og 1 for skog, våtmark, fjell, åpent lavland og ferskvann. Dette er biologisk mangfold relativt til et referansenivå, **ikke** prosent vernet areal.
+- **Manglende data:** Vi publiserer ikke antatte verneandeler for våtmark, fjell, åpent lavland eller ferskvann. De står som null i JSON (= ikke dokumentert), ikke 0 %. Landmålets geografiske omfang (inkl. Svalbard og Jan Mayen) skiller seg fra disse fastlandsindikatorene.
+
+Kilder: [NIBIO – verneområder](https://www.skogbruk.nibio.no/verneomrader), [Miljødirektoratet – Naturindeks 2025](https://www.miljodirektoratet.no/aktuelt/nyheter/2025/november-2025/ny-naturindeks-norsk-natur-betydelig-redusert/), [Miljødirektoratet – Norges verneområder](https://www.miljodirektoratet.no/ansvarsomrader/vernet-natur/norges-verneomrader/).
+
+Disse indikatorene er ikke inkludert i den ukentlige SSB-oppdateringen. Ved ny publisering må `data/ecosystems.json` revideres mot kildene og kontrolleres i en pull request.

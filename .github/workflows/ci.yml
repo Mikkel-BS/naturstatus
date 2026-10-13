@@ -19,6 +19,7 @@ jobs:
           node --check app.js
           node --check map.js
           node --check goal.js
+          node --check ecosystems.js
       - name: Verify SSB integration against live official statistics
         run: |
           python scripts/check_map_sources.py

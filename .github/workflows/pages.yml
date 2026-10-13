@@ -28,6 +28,7 @@ jobs:
           mkdir -p dist/data
           cp index.html styles.css app.js .nojekyll dist/
           cp data/overview.csv data/historical.json dist/data/
+          if [ -f data/historical.csv ]; then cp data/historical.csv dist/data/; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

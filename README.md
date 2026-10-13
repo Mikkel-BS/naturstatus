@@ -100,3 +100,9 @@ Data: [Miljødirektoratet (2025), NI2025: Nature Index Values, CC BY 4.0](https:
 Ved ønske om oppdatering brukes **Actions → Refresh Nature Index history (manual) → Run workflow**. Datasettene oppdateres ikke ukentlig fordi 2025-utgaven er et frosset forskningsprodukt. En senere ny versjon vil kreve metodisk versjonering i stedet for å overskrive historiske tall lydløst.
 
 Valider mot offentlig API med `python scripts/update_nature_index.py --check`. `python -m unittest discover -s tests` verifiserer fullstendighet og matematisk korrekthet uten nettverk.
+
+### Sammenlign utviklingen i naturindeks mellom fem økosystemer
+
+På siden for historisk naturtilstand vises en sammenligning av beregnede naturindeksmedianer mellom referanseårene **2000 og 2024** for skog, fjell, våtmark, åpent lavland og ferskvann. Velg region i den eksisterende nedtrekksmenyen for å oppdatere alle fem rader. Et felles nullsentrert søylediagram viser positive og negative medianendringer på samme skala **innen regionen**. Bruk «Detaljer» for å åpne det enkelte økosystemets fem referanseår og 95 % konfidensintervaller.
+
+Denne sammenligningen bruker kun `data/nature_index_history.json`; den genererer ingen nye naturindeksobservasjoner eller historiske verneandeler. Differansen mellom to medianestimater har ikke et eget beregnet konfidensintervall, og er **ikke en automatisk signifikanskonklusjon**. Det må fremdeles skilles klart mellom økologisk tilstand (naturindeks) og areal vernet i prosent.

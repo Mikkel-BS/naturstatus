@@ -18,13 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate and test
+      - name: Validate and prepare distributable
         run: |
           python -m unittest discover -s tests
-          test -f index.html
+          mkdir -p dist/data
+          cp index.html styles.css app.js .nojekyll dist/
+          cp data/overview.csv data/historical.json dist/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4

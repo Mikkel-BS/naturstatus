@@ -15,3 +15,7 @@ jobs:
           test -s index.html
           test -s styles.css
           test -s app.js
+      - name: Verify SSB integration against live official statistics
+        run: |
+          python scripts/update_ssb.py
+          python -m unittest discover -s tests

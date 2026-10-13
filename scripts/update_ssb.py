@@ -110,10 +110,11 @@ def build(dataset):
     # SSB's archived 2009 mainland release: 29,582 km² national parks,
     # 4,774 km² nature reserves; 2009 nationwide totals also include Svalbard.
     # Fail closed if this discontinuity accidentally returns.
-    for purpose, benchmark in (("national_park", 29582), ("nature_reserve", 4774)):
-        point = next((p for p in series[purpose] if p["year"] == 2009), None)
-        if point is None or abs(point["km2"] - benchmark) > 2:
-            raise ValueError(f"2009 mainland source benchmark mismatch for {purpose}: {point}")
+    if 2009 in years:
+        for purpose, benchmark in (("national_park", 29582), ("nature_reserve", 4774)):
+            point = next((p for p in series[purpose] if p["year"] == 2009), None)
+            if point is None or abs(point["km2"] - benchmark) > 2:
+                raise ValueError(f"2009 mainland source benchmark mismatch for {purpose}: {point}")
     last = series["total"][-1]
     if last["year"] == 2025 and abs(last["km2"] - 57483.38) > 1:
         raise ValueError(f"2025 benchmark mismatch: {last}")

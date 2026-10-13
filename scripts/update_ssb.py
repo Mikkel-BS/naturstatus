@@ -84,7 +84,10 @@ def build(dataset):
                 continue
             # SSB included the Arctic territories only from later years.
             # Missing older regional cells are treated as not included in nationwide sum.
-            arctic = [lookup.get((r, purpose, year)) or 0 for r in ("21","22")]
+            # Official SSB methodology: Svalbard entered national figures in 2010,
+            # Jan Mayen in 2012. Earlier regional histories must not be subtracted.
+            arctic = [(lookup.get(("21", purpose, year)) or 0) if year >= 2010 else 0,
+                      (lookup.get(("22", purpose, year)) or 0) if year >= 2012 else 0]
             mainland = round(float(national) - sum(arctic),2)
             if mainland < 0:
                 raise ValueError(f"Negative mainland area: {purpose}/{year}")

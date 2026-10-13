@@ -22,7 +22,7 @@
       if(data.schema_version!==1||!Array.isArray(data.ecosystems)||data.ecosystems.length!==5 ||
         data.ecosystems.some(d=>!(d.nature_index>=0&&d.nature_index<=1) ||
           (d.protected_percent===null?d.protected_status!=='not_verified':
-          !Number.isFinite(d.protected_percent)||d.protected_percent<0||d.protected_percent>100))) throw Error('Invalid ecosystem record');
+          !Number.isFinite(d.protected_percent)||d.protected_percent<0||d.protected_percent>100||!['available','published_approximate'].includes(d.protected_status)))) throw Error('Invalid ecosystem record');
       const forest=data.forest_source.protected_share;
       if(forest.all_forest_all_three_forms!==7.6 ||forest.productive_forest_national_park_nature_reserve!==4.4)throw Error('Forest method mismatch');
       numbers.replaceChildren();
@@ -42,12 +42,16 @@
         const heading=document.createElement('h3');heading.textContent=entry.label;
         const description=document.createElement('p');description.textContent=entry.context;
         const part=document.createElement('p');
+        const approx=entry.protected_status==='published_approximate';
         part.textContent=entry.protected_percent===null ?
           'Dokumentert verneandel: ikke tilgjengelig i denne utgaven.' :
-          'Dokumentert verneandel: '+fmt(entry.protected_percent)+' % ('+entry.coverage_definition+').';
+          (approx?'Omtrentlig verneandel: ':'Dokumentert verneandel: ')+fmt(entry.protected_percent)+' % ('+entry.coverage_definition+').';
         const index=document.createElement('p');
         index.textContent='Naturindeks 2025: '+fmt(entry.nature_index)+' av 1,0. Dette er ikke verneandel.';
-        details.append(heading,part,index,description);
+        const source=document.createElement('a');
+        source.href=entry.protected_source||data.forest_source.url;
+        source.target='_blank';source.rel='noopener noreferrer';source.textContent='Kilde for verneandel ↗';
+        details.append(heading,part,index,description,source);
       };
       for(const entry of data.ecosystems){
         const btn=document.createElement('button');
@@ -58,13 +62,13 @@
         const fill=document.createElement('span');fill.style.width=(entry.nature_index*100)+'%';meter.append(fill);
         const subtitle=document.createElement('small');
         subtitle.textContent=entry.protected_percent===null?'Verneandel: ikke tilgjengelig':
-          'Verneandel: '+fmt(entry.protected_percent)+' %';
+          'Verneandel: '+(entry.protected_status==='published_approximate'?'ca. ':'')+fmt(entry.protected_percent)+' %'+(entry.protected_report_year?' (rapportert '+entry.protected_report_year+')':'');
         btn.append(heading,value,meter,subtitle);
         btn.addEventListener('click',()=>select(entry,btn));
         list.append(btn);
         if(entry.id==='forest')select(entry,btn);
       }
-      status.textContent='Fem økosystemer • naturindeks 2025 (0–1) • verneandel bare når publisert med sammenlignbart datagrunnlag';
+      status.textContent='Fem økosystemer • naturindeks 2025 (0–1) • vern: NIBIO per 1.1.2025 (skog) og naturmeldingen 2024 (øvrige, omtrentlige)';
       root.dataset.loaded='true';
     })
     .catch(err=>{status.textContent='Økosystemdata kunne ikke verifiseres. Se NIBIO og Miljødirektoratet via kildelenkene.';console.error(err);});

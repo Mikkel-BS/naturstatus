@@ -70,3 +70,10 @@ for path in ['/Ecosystems/skog','/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.
    print('NEEDLE',needle,'MATCHES',len(matches))
    for i in matches[:8]:print('ASSET MATCH',body[max(0,i-160):i+240][:400])
  except Exception as e:print('ASSET ERROR',path,repr(e))
+
+url='https://www.naturindeks.no/Ecosystems/skog'
+with urllib.request.urlopen(url,timeout=25) as rr: body=rr.read(250000).decode('utf-8','replace')
+for needle in ['chartData','chartSeries','2024','0.447','0,447','0.435','ecosystemId','jsonData','props','app.mount','createApp','JSON.parse','window.']:
+ hits=[m.start() for m in re.finditer(re.escape(needle),body,re.I)]
+ print('HTML NEEDLE',needle,len(hits))
+ for i in hits[:4]:print('HTML SEGMENT',repr(body[max(0,i-220):i+320]))

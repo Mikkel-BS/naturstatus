@@ -58,7 +58,7 @@ class SSBTests(unittest.TestCase):
             self.assertLess(byyear[2008],byyear[2009])
             self.assertLess(byyear[2009],byyear[2010])
         self.assertIn("2009",data["historical_caveat"])
-        self.assertIn("2009",data["historical_reference"])
+        self.assertIn("arkiv/2010-07-08",data["historical_reference"])
         with (ROOT/"data"/"historical.csv").open(encoding="utf-8",newline="") as handle:
             rows=list(csv.DictReader(handle))
         for key,number in expected.items():

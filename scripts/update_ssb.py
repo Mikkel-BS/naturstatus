@@ -82,12 +82,24 @@ def build(dataset):
                 if label == "total" or year >= 2018:
                     raise ValueError(f"Missing nationwide value: {purpose}/{year}")
                 continue
-            # SSB included the Arctic territories only from later years.
-            # Missing older regional cells are treated as not included in nationwide sum.
-            # Official SSB methodology: Svalbard entered national figures in 2010,
-            # Jan Mayen in 2012. Earlier regional histories must not be subtracted.
-            arctic = [(lookup.get(("21", purpose, year)) or 0) if year >= 2010 else 0,
-                      (lookup.get(("22", purpose, year)) or 0) if year >= 2012 else 0]
+            # Important: "Hele landet" INCLUDES Svalbard in 2009 already,
+            # as confirmed by SSB's 2009 release, despite the later coverage
+            # change sometimes being described as 2010. Leaving it in creates
+            # a fictitious 2009 spike followed by a 2010 collapse.
+            # Jan Mayen is included in nationwide figures from 2012.
+            if year >= 2009:
+                svalbard = lookup.get(("21", purpose, year))
+                if svalbard is None:
+                    raise ValueError(f"Missing Svalbard correction for {purpose}/{year}")
+            else:
+                svalbard = 0
+            if year >= 2012:
+                jan_mayen = lookup.get(("22", purpose, year))
+                if jan_mayen is None:
+                    raise ValueError(f"Missing Jan Mayen correction for {purpose}/{year}")
+            else:
+                jan_mayen = 0
+            arctic = [svalbard, jan_mayen]
             mainland = round(float(national) - sum(arctic),2)
             if mainland < 0:
                 raise ValueError(f"Negative mainland area: {purpose}/{year}")
@@ -95,6 +107,13 @@ def build(dataset):
         if not points:
             raise ValueError(f"Missing series {label}")
         series[label] = points
+    # SSB's archived 2009 mainland release: 29,582 km² national parks,
+    # 4,774 km² nature reserves; 2009 nationwide totals also include Svalbard.
+    # Fail closed if this discontinuity accidentally returns.
+    for purpose, benchmark in (("national_park", 29582), ("nature_reserve", 4774)):
+        point = next((p for p in series[purpose] if p["year"] == 2009), None)
+        if point is None or abs(point["km2"] - benchmark) > 2:
+            raise ValueError(f"2009 mainland source benchmark mismatch for {purpose}: {point}")
     last = series["total"][-1]
     if last["year"] == 2025 and abs(last["km2"] - 57483.38) > 1:
         raise ValueError(f"2025 benchmark mismatch: {last}")
@@ -105,7 +124,9 @@ def build(dataset):
         "metric": "protected_land_km2",
         "source": SOURCE,
         "table": TABLE,
-        "method": "National value minus Svalbard minus Jan Mayen, by year and protection category.",
+        "method": "For hver kategori: nasjonal sum minus Svalbard fra og med 2009, og Jan Mayen fra og med 2012. Referanseverdi fra SSBs arkiverte fastlandstall for 2009 er kontrollert.",
+        "historical_caveat": "SSBs 2009-total inkluderer Svalbard; uten korreksjon oppstår en kunstig topp i 2009. Endringer i antall km² beskriver ikke økologisk tilstand.",
+        "historical_reference": "https://www.ssb.no/natur-og-miljo/statistikker/arealvern/arkiv/2010-07-08",
         "note": DENOMINATOR_NOTE,
         "series": series,
     }

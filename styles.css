@@ -119,3 +119,23 @@
 .nature-history-caution p{margin-bottom:0}
 .nature-history-caution a{color:#476644}
 @media(max-width:760px){.nature-history-controls label{min-width:100%;width:100%}.nature-history-chart-shell{padding:10px}.nature-history-table{min-width:390px}.nature-history-chart-label span{display:block}}
+
+/* Historical nature condition comparison: same signed index scale for all ecosystems. */
+.ecosystem-comparison{border-top:1px solid #dce7dd;padding-top:23px;margin:24px 0}
+.comparison-title h3{font:normal 25px 'DM Serif Display',Georgia,serif;margin:0 0 9px}
+.comparison-title p,.comparison-method{font-size:12px;line-height:1.7;color:#59715f;max-width:870px}
+.comparison-scroll{max-width:100%;overflow-x:auto}
+.comparison-table{width:100%;min-width:540px;border-collapse:collapse;margin:12px 0}
+.comparison-table caption{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+.comparison-table th,.comparison-table td{padding:12px 10px;border-bottom:1px solid #e1e9e1;font-size:12px;vertical-align:middle;text-align:left}
+.comparison-table th[scope=row]{font-size:13px}
+.comparison-table td:nth-child(4){min-width:165px}
+.comparison-value{display:block;font-variant-numeric:tabular-nums;margin-bottom:4px}
+.comparison-track{height:9px;position:relative;border-radius:8px;background:#edf3ea;overflow:hidden}
+.comparison-zero{position:absolute;left:50%;height:100%;width:2px;background:#506b59;z-index:1}
+.comparison-fill{position:absolute;top:0;height:100%;border-radius:4px}
+.comparison-fill.positive{background:#3d8665}
+.comparison-fill.negative{background:#b56d4c}
+.comparison-action{border:1px solid #a9c7ac;background:#f8fbf5;border-radius:5px;padding:7px 10px;cursor:pointer;font:inherit;color:#25553d}
+.comparison-action:hover,.comparison-action:focus-visible{border-color:#3e8061;background:#eaf4e9}
+.comparison-method{margin:8px 0}

@@ -57,3 +57,16 @@ for u in paths:
  except urllib.error.HTTPError as e:
   print('ALT ERROR',u,e.code,e.headers.get('Content-Type'),e.read(250))
  except Exception as e:print('ALT ERROR',u,repr(e))
+
+from html.parser import HTMLParser
+class Tags(HTMLParser):
+ def handle_starttag(self,tag,attrs):
+  if tag in ('script','link'):
+   d=dict(attrs)
+   print('PAGE ASSET',tag,d.get('src') or d.get('href'))
+for url in ['https://www.naturindeks.no/Ecosystems/skog','https://www.naturindeks.no/DownloadData']:
+ try:
+  with urllib.request.urlopen(url,timeout=20) as response: html=response.read(100000).decode('utf-8','replace')
+  print('PAGE',url,'len',len(html),'END',html[-1400:])
+  Tags().feed(html)
+ except Exception as e:print('PAGE ERROR',url,repr(e))

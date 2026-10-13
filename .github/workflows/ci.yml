@@ -1,0 +1,17 @@
+name: Validate pull requests
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate data and site
+        run: |
+          python -m unittest discover -s tests
+          test -s index.html
+          test -s styles.css
+          test -s app.js

@@ -6,7 +6,7 @@
 
 - Andel formelt vernet land på fastlandet: offentlig SSB-indikator for 2025 (17,8 %).
 - Formelt vern i hele Norge inkludert Svalbard og Jan Mayen: regjeringens rapporterte indikator i mars 2026 (25,8 %). Dette er ikke samme geografiske avgrensning som fastlandstallet.
-- SSB tabell 08936, km² vernet land: samlet, ikke-dobbeltellende total **fra 2018**, og separate vernekategorier fra **1975**. SSB begynte å inkludere Svalbard i nasjonale tall i 2010 og Jan Mayen i 2012. Skriptet trekker dem bare fra i år de inngår.
+- SSB tabell 08936, km² vernet land: samlet, ikke-dobbeltellende total **fra 2018**, og separate vernekategorier fra **1975**. SSBs nasjonale 2009-tall inkluderer allerede Svalbard, mens Jan Mayen trekkes fra fra og med 2012. Vi validerer 2009-fastlandstall mot SSBs arkiverte publisering. Skriptet trekker dem bare fra i år de inngår.
 
 Målet om 30 % i 2030 inkluderer kvalifiserte OECM-tiltak og må ikke tolkes som likestilt med andel formelt vern. En økning i vern sier heller ikke alene noe sikkert om naturtilstand eller effektiv forvaltning.
 
@@ -106,3 +106,9 @@ Valider mot offentlig API med `python scripts/update_nature_index.py --check`. `
 På siden for historisk naturtilstand vises en sammenligning av beregnede naturindeksmedianer mellom referanseårene **2000 og 2024** for skog, fjell, våtmark, åpent lavland og ferskvann. Velg region i den eksisterende nedtrekksmenyen for å oppdatere alle fem rader. Et felles nullsentrert søylediagram viser positive og negative medianendringer på samme skala **innen regionen**. Bruk «Detaljer» for å åpne det enkelte økosystemets fem referanseår og 95 % konfidensintervaller.
 
 Denne sammenligningen bruker kun `data/nature_index_history.json`; den genererer ingen nye naturindeksobservasjoner eller historiske verneandeler. Differansen mellom to medianestimater har ikke et eget beregnet konfidensintervall, og er **ikke en automatisk signifikanskonklusjon**. Det må fremdeles skilles klart mellom økologisk tilstand (naturindeks) og areal vernet i prosent.
+
+## Datakvalitet: feilaktig 2009-topp (rettet)
+
+En tidligere utgave trakk Svalbard fra først fra 2010, selv om SSBs landsaggregat allerede inkluderte øygruppen i **2009**. Det skapte en kunstig topp i både nasjonalparker og naturreservater, etterfulgt av en falsk nedgang i 2010. De korrigerte fastlandstallene for 2009 er **29 581,68 km² nasjonalparker** og **4 774,27 km² naturreservater** i tabell 08936. [SSBs arkiverte 2009-statistikk](https://www.ssb.no/natur-og-miljo/statistikker/arealvern/arkiv/2010-07-08) oppgir avrundet 29 582 og 4 774 km². Importen kontrollerer disse nøkkeltallene og stopper ved avvik. Kartets offisielle symboler er rødt diagonalt mønster for vedtatt vern og lilla horisontalt mønster for foreslått vern.
+
+I figurene betyr «største registrerte endring» utelukkende den numeriske forskjellen mellom to påfølgende rapporterte år. Det dokumenterer ikke hvorfor arealet endret seg, og sier ikke hvorvidt naturtilstanden er blitt bedre.

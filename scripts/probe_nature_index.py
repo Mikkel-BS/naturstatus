@@ -15,3 +15,36 @@ for url in urls:
   print('ZIP',re.findall(r'[^"\\s<>]{0,80}(?:\\.csv|\\.zip|\\.xlsx|/api/|/data/)[^"\\s<>]{0,100}',text,re.I)[:20])
   if 'api.nva' in url:print('JSONHEAD',text[:2000])
  except Exception as e:print('ERROR',url,repr(e))
+
+# Locate official graph data endpoint in web bundle.
+bundle='https://www.naturindeks.no/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.js'
+try:
+ with urllib.request.urlopen(urllib.request.Request(bundle,headers={'User-Agent':'Naturstatus/0.3'}),timeout=20) as r: js=r.read(2500000).decode('utf8','replace')
+ print('BUNDLE_LEN',len(js))
+ for needle in ['api/','/api','axios','fetch(','chart','Ecosystems/','ecosystem','GetIndex','IndexValues','plotData']:
+  matches=list(re.finditer(re.escape(needle),js,re.I))
+  print('JS',needle,len(matches),[js[max(0,m.start()-180):m.start()+200] for m in matches[:3]])
+except Exception as e:print('BUNDLE_ERROR',repr(e))
+# Search API metadata for official zipped dataset and inspect file delivery candidates.
+try:
+ with urllib.request.urlopen('https://api.nva.unit.no/search/resources?query=NI2025%3A%20Nature%20Index%20Values',timeout=20) as r: hits=json.load(r)['hits']
+ for hit in hits[:2]:
+  print('NVA_HIT',hit.get('id'),hit.get('identifier'),hit.get('entityDescription',{}).get('mainTitle'))
+  print('NVA_ARTIFACTS',hit.get('associatedArtifacts'))
+  artifact=next((a for a in hit.get('associatedArtifacts',[]) if a.get('type')=='OpenFile'),None)
+  if artifact:
+   file=artifact['identifier']
+   pub=hit.get('identifier') or (hit.get('id') or '').split('/')[-1]
+   prefixes=[
+    'https://api.nva.unit.no/publication/'+pub+'/file/'+file,
+    'https://api.nva.unit.no/publication/file/'+file,
+    'https://api.nva.unit.no/files/'+file,
+    'https://api.nva.unit.no/file/'+file,
+    'https://api.nva.unit.no/download/'+file,
+    'https://nva.sikt.no/files/'+file,
+   ]
+   for uri in prefixes:
+    try:
+     with urllib.request.urlopen(urllib.request.Request(uri,headers={'User-Agent':'Naturstatus/0.3','Accept':'application/octet-stream'}),timeout=12) as response: print('FILE_TRY',uri,response.status,response.geturl(),response.headers.get('Content-Type'),response.read(10))
+    except Exception as e:print('FILE_ERROR',uri,str(e)[:90])
+except Exception as e:print('NVA_ERROR',repr(e))

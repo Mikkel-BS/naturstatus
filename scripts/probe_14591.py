@@ -8,3 +8,9 @@ for name in metadata['id']:
  d=metadata['dimension'][name];order=d['category']['index'];cats=sorted(order,key=order.get)
  print('DIM',name,d.get('label'),'NUM',len(cats))
  for key in cats[:30]: print(' CODE',repr(key),'LABEL',repr(d['category'].get('label',{}).get(key,'')))
+
+params={'lang':'no','valuecodes[Region]':'0','valuecodes[ContentsCode]':'ProdSkogArTotal,VernProdSkogAr','valuecodes[Tid]':'2019-2023,2020-2024,2021-2025'}
+url=BASE+'/data?'+urllib.parse.urlencode(params)
+req=urllib.request.Request(url,headers={'User-Agent':'Naturstatus Norge/0.3','Accept':'application/json'})
+with urllib.request.urlopen(req,timeout=30) as response: data=json.load(response)
+print('DATA ID',data['id'],'SIZE',data['size'],'VALUES',data.get('value'),'STATUS',data.get('status'))

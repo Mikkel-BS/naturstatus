@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/update_ssb.py'
+      - 'scripts/update_forest.py'
       - '.github/workflows/update-data.yml'
   schedule:
     - cron: '17 10 * * 3'
@@ -23,15 +24,16 @@ jobs:
       - name: Retrieve and validate SSB
         run: |
           python scripts/update_ssb.py
+          python scripts/update_forest.py
           python -m unittest discover -s tests
       - name: Commit validated changes only
         run: |
-          if git diff --quiet -- data/historical.json data/historical.csv; then
+          if git diff --quiet -- data/historical.json data/historical.csv data/forest_history.json data/forest_history.csv; then
             echo "No changes in verified official data"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/historical.json data/historical.csv
-          git commit -m "data: refresh verified SSB protected-area statistics"
+          git add data/historical.json data/historical.csv data/forest_history.json data/forest_history.csv
+          git commit -m "data: refresh official protected land and forest figures"
           git push

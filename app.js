@@ -35,6 +35,11 @@ function draw(name,series) {
   chart.setAttribute('aria-label',labels[name]+': '+sorted.length+' år med opplysninger fra '+minYear+' til '+maxYear+', areal i km²');
   const first=sorted[0],last=sorted.at(-1);
   summary.textContent=format(first.km2)+' km² ('+minYear+') → '+format(last.km2)+' km² ('+maxYear+') · '+(last.km2>=first.km2?'+':'')+format(last.km2-first.km2)+' km²';
+  const adjacent=sorted.slice(1).map((p,i)=>({start:sorted[i].year,end:p.year,difference:p.km2-sorted[i].km2})).filter(d=>d.end-d.start===1);
+  const biggest=adjacent.reduce((current,d)=>!current||Math.abs(d.difference)>Math.abs(current.difference)?d:current,null);
+  const insight=document.querySelector('#chart-insight');
+  if(insight&&biggest)insight.textContent='Største registrerte endring mellom to påfølgende år i denne serien: '+biggest.start+'–'+biggest.end+
+    ', '+(biggest.difference>=0?'+':'−')+format(Math.abs(biggest.difference))+' km². Dette beskriver endringen i rapportert vernet areal, ikke hva som forårsaket den.';
   status.textContent=sorted.length+' år med SSB-tall • '+(annual?'årlig sammenhengende serie':'mangler enkelte år')+' • areal i km²';
   table.replaceChildren();
   const thead=document.createElement('thead');
@@ -62,6 +67,12 @@ fetch('./data/historical.json',{cache:'no-cache'})
     }
     picker.disabled=false;
     picker.addEventListener('change',()=>draw(picker.value,series));
+    const note=document.querySelector('#chart-source-note');
+    if(note&&typeof data.historical_caveat==='string') {
+      const text=document.createElement('span');
+      text.textContent=' '+data.historical_caveat;
+      note.prepend(text);
+    }
     draw('total',series);
     exportLink.href='./data/historical.csv';
     exportLink.textContent='Last ned alle årlige kildetall ↓';

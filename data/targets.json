@@ -1,0 +1,23 @@
+{
+  "id": "norway_terrestrial_2030",
+  "title": "Norges nasjonale bidrag til naturavtalens mål 3 (land)",
+  "target_year": 2030,
+  "target_percent": 30,
+  "scope": "Norges landareal inkludert Svalbard og Jan Mayen",
+  "qualifying_measures": ["formelt vern", "andre effektive arealbaserte bevaringstiltak (OECM)"],
+  "formal_protection": {
+    "percent": 25.8,
+    "reported_on": "2026-03-03",
+    "reference_label": "Regjeringens rapportering, mars 2026",
+    "source": "https://www.regjeringen.no/no/aktuelt/ny-nasjonal-rapport-til-naturavtalen/id3150748/"
+  },
+  "qualified_oecm": {
+    "percent": null,
+    "status": "not_quantified",
+    "note": "Ingen verifisert, landsdekkende OECM-andel er lagt inn i Naturstatus. Dette betyr ikke at andelen er null."
+  },
+  "evidence_status": "incomplete",
+  "assessment": "Måloppnåelse kan ikke avgjøres ut fra formelt vern alene. Effektiv forvaltning, representativitet og dokumenterte OECM-tiltak må også vurderes.",
+  "target_source": "https://www.regjeringen.no/no/dokumenter/prop.-1-s-20262027/id3175616/?ch=3",
+  "methodology": "Gapet på 4,2 prosentpoeng er forskjellen mellom 30 %-målet og 25,8 % formelt vern. Det er ikke en prognose eller et estimat på nødvendig nytt vern; kvalifiserte OECM-tiltak kan bidra."
+}

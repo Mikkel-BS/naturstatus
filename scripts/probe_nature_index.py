@@ -48,3 +48,11 @@ try:
      with urllib.request.urlopen(urllib.request.Request(uri,headers={'User-Agent':'Naturstatus/0.3','Accept':'application/octet-stream'}),timeout=12) as response: print('FILE_TRY',uri,response.status,response.geturl(),response.headers.get('Content-Type'),response.read(10))
     except Exception as e:print('FILE_ERROR',uri,str(e)[:90])
 except Exception as e:print('NVA_ERROR',repr(e))
+
+try:
+ with urllib.request.urlopen('https://www.naturindeks.no/dist/assets/Ecosystems-index-vite.ts-BdF7brmG.js',timeout=20) as r: x=r.read().decode()
+ for token in ['function G()', 'function G(', 'GraphEcosystem','chartData:', 'get(', 'post(', 'APIurl', 'chartData=', 'naturindeks','indexData', 'ChartEcosystem']:
+  matches=list(re.finditer(re.escape(token),x,re.I))
+  print('CHUNK',token,'COUNT',len(matches))
+  for m in matches[-4:]:print('SLICE',x[max(0,m.start()-280):min(len(x),m.start()+550)])
+except Exception as e:print('ERROR_JS',repr(e))

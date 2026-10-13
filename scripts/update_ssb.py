@@ -87,12 +87,10 @@ def build(dataset):
             # change sometimes being described as 2010. Leaving it in creates
             # a fictitious 2009 spike followed by a 2010 collapse.
             # Jan Mayen is included in nationwide figures from 2012.
-            if year >= 2009:
-                svalbard = lookup.get(("21", purpose, year))
-                if svalbard is None:
-                    raise ValueError(f"Missing Svalbard correction for {purpose}/{year}")
-            else:
-                svalbard = 0
+            # Landscape protection is absent on Svalbard (valid empty cell).
+            svalbard = (lookup.get(("21", purpose, year)) or 0) if year >= 2009 else 0
+            if year == 2009 and purpose in ("NP", "NR") and not svalbard:
+                raise ValueError(f"Expected positive Svalbard area in {purpose}/2009")
             # Jan Mayen has no parks / other categories in some years:
             # an empty regional cell is a valid zero, not a missing national total.
             jan_mayen = (lookup.get(("22", purpose, year)) or 0) if year >= 2012 else 0

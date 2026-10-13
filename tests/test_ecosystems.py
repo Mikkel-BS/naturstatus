@@ -11,7 +11,8 @@ class EcosystemTests(unittest.TestCase):
     def test_ecosystem_values_and_scope(self):
         d=self.data
         self.assertEqual(d['schema_version'],1)
-        self.assertEqual(d['nature_index']['reference_year'],2025)
+        self.assertEqual(d['nature_index']['reference_year'],2024)
+        self.assertEqual(d['nature_index']['edition_year'],2025)
         self.assertEqual(d['nature_index']['range'],[0,1])
         self.assertEqual({x['id'] for x in d['ecosystems']},
                          {'forest','wetlands','mountains','open_lowland','freshwater'})

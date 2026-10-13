@@ -64,3 +64,27 @@ Endring av målgrunnlaget krever dokumentert kilde og oppdaterte metodetester. S
 Kilder: [Regjeringens naturmelding 2024, kap. 6.3.2](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6), [NIBIO – verneområder](https://www.skogbruk.nibio.no/verneomrader), [Miljødirektoratet – Naturindeks 2025](https://www.miljodirektoratet.no/aktuelt/nyheter/2025/november-2025/ny-naturindeks-norsk-natur-betydelig-redusert/), [Miljødirektoratet – Norges verneområder](https://www.miljodirektoratet.no/ansvarsomrader/vernet-natur/norges-verneomrader/).
 
 Disse indikatorene er ikke inkludert i den ukentlige SSB-oppdateringen. Ved ny publisering må `data/ecosystems.json` revideres mot kildene og kontrolleres i en pull request.
+
+## Historikk etter økosystem: hva er faktisk dokumentert?
+
+### Skog: offisiell verneutvikling over tre takstperioder
+
+Fra SSB tabell [14591](https://www.ssb.no/statbank/table/14591/) henter `scripts/update_forest.py` **vernet produktivt skogareal (km²)** og **produktivt skogareal totalt (km²)** for landet i overlappende femårsperioder. Andel i prosent beregnes som (vernet areal / produktivt areal) × 100 for samme periode.
+
+Kildens aktuelle perioder er 2019–2023, 2020–2024 og 2021–2025. De gir **ikke** årlige uavhengige observasjoner, og skal ikke behandles som det. Vekst i området kan ikke direkte tolkes som økologisk forbedring eller som kausalt resultat av én bestemt policy. Serien er heller ikke identisk med NIBIOs verneandel for produktiv skog (5,9 % i tre verneformer, 4,4 % i nasjonalparker og naturreservater i 2025): definisjoner, utvalg og verneformer er ikke harmonisert.
+
+Filer:
+- `data/forest_history.json`: kilde og dokumenterte måledata.
+- `data/forest_history.csv`: transparent, eksporterbart observasjonsgrunnlag.
+- `scripts/update_forest.py`: deterministisk PxWeb v2-importør med schema- og tallvalidering.
+
+Både importøren for naturvern (SSB 08936) og for skog (SSB 14591) inngår i den ukentlige validerte datasykroniseringen og i PR-tester.
+
+### Andre økosystemer: status, ikke oppdiktet utvikling
+
+Naturmeldingen [Meld. St. 35 (2023–2024)](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/?ch=6) oppgir omtrentlige verneandeler for våtmark, fjell, elver/innsjøer og kulturlandskap/åpent lavland. Dette er **ett publisert tverrsnitt**, ikke en trendserie. Vi presenterer dem ikke som historiske vernekurver.
+
+[Naturindeks for Norge 2025](https://www.naturindeks.no/DownloadData) inneholder sammenlignbare beregnede vurderinger for biologisk mangfold i 2000, 2010, 2014, 2019 og 2024. Dette gjelder *naturtilstand*, ikke *verneandel*. Naturstatus lenker til offisielle økosystemvise historiske analyser, men lager ikke egne historiske indekstall uten å importere og validere disse datapakkene. Etter 2025 er det ikke planlagt samme femårige oppdatering av den samlede naturindeksen.
+
+Det er fremdeles **ikke mulig å fastslå fra Naturstatus** om andelen vernet våtmark, fjell, elver/innsjøer eller kulturlandskap har økt med et bestemt antall prosentpoeng over tid. Dette vil kreve sammenlignbare tidsserieuttrekk eller historiske romlige analyser.
+

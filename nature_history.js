@@ -22,6 +22,59 @@
     return node;
   };
 
+  const comparisonRows=document.getElementById('comparison-rows');
+  const comparisonRegion=document.getElementById('comparison-region');
+
+  function renderComparison(data) {
+    const region=areaSelect.value;
+    const rows=Object.entries(data.ecosystems).map(([id,entry])=>{
+      const points=entry.areas[region];
+      if(points.length!==5||points[0].year!==2000||points.at(-1).year!==2024) {
+        throw Error('Incomplete comparison: '+id+'/'+region);
+      }
+      return {id,label:entry.label,first:points[0].median,last:points.at(-1).median,
+              change:points.at(-1).median-points[0].median};
+    });
+    // One symmetric zero-centred scale across all five ecosystems for the region.
+    const scale=Math.max(0.1,Math.ceil(Math.max(...rows.map(row=>Math.abs(row.change)))*100)/100);
+    comparisonRows.replaceChildren();
+    for(const row of rows){
+      const tr=document.createElement('tr');
+      const name=document.createElement('th');name.scope='row';name.textContent=row.label;
+      const before=document.createElement('td');before.textContent=format(row.first);
+      const after=document.createElement('td');after.textContent=format(row.last);
+      const change=document.createElement('td');
+      const number=document.createElement('strong');
+      number.className='comparison-value';
+      number.textContent=(row.change>0?'+':'')+format(row.change);
+      const track=document.createElement('div');track.className='comparison-track';
+      track.setAttribute('role','img');
+      track.setAttribute('aria-label',(row.change>0?'Økning ':row.change<0?'Nedgang ':'Uendret ')+
+        format(Math.abs(row.change))+' indekspoeng, null i midten');
+      const zero=document.createElement('span');zero.className='comparison-zero';
+      const fill=document.createElement('span');
+      fill.className='comparison-fill '+(row.change>=0?'positive':'negative');
+      const width=Math.min(49,Math.abs(row.change)/scale*49);
+      fill.style.width=width.toFixed(2)+'%';
+      fill.style.left=(row.change>=0?50:50-width).toFixed(2)+'%';
+      track.append(zero,fill);change.append(number,track);
+      const action=document.createElement('td');
+      const button=document.createElement('button');button.type='button';
+      button.className='comparison-action';button.textContent='Detaljer';
+      button.setAttribute('aria-label','Vis tidsserie for '+row.label+' i '+region);
+      button.addEventListener('click',()=>{
+        ecosystemSelect.value=row.id;
+        render(data);
+        document.getElementById('nature-history-chart').scrollIntoView({behavior:'smooth',block:'center'});
+      });
+      action.append(button);
+      tr.append(name,before,after,change,action);
+      comparisonRows.append(tr);
+    }
+    comparisonRegion.textContent=region+' · beregnet endring i naturindeks · symmetrisk søyleskala ±'+
+      format(scale)+' indekspoeng. Dette er ikke endring i verneandel.';
+  }
+
   function render(data) {
     const info=data.ecosystems[ecosystemSelect.value];
     const points=info?.areas?.[areaSelect.value];
@@ -58,6 +111,7 @@
       tbody.append(tr);
     }
     status.textContent='Fem referanseår, ikke årlige målinger. 95 % konfidensintervall er vist som vertikale streker. Endringene alene avgjør ikke statistisk signifikans.';
+    renderComparison(data);
   }
 
   fetch('./data/nature_index_history.json',{cache:'no-cache'})

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "id": "ssb_nfi_protected_productive_forest",
+  "scope": "mainland_norway",
+  "metric": "protected_productive_forest_share",
+  "table": "14591",
+  "source": "https://www.ssb.no/statbank/table/14591/",
+  "license": "CC BY 4.0",
+  "series_type": "overlapping_five_year_survey_periods",
+  "denominator": "Produktivt skogareal i alt, fra samme femårige takseringsperiode",
+  "numerator": "Vernet produktivt skogareal, fra samme femårige takseringsperiode",
+  "warning": "Observasjonene er overlappende femårige takseringsperioder, ikke uavhengige årsobservasjoner. Arealandelen bygger på SSBs produktiv-skog-definisjon, og er ikke direkte sammenlignbar med NIBIOs bredere skogvernstatistikk.",
+  "points": [
+    {
+      "period": "2019-2023",
+      "end_year": 2023,
+      "protected_productive_forest_km2": 3481,
+      "total_productive_forest_km2": 85898,
+      "share_percent": 4.052
+    },
+    {
+      "period": "2020-2024",
+      "end_year": 2024,
+      "protected_productive_forest_km2": 3614,
+      "total_productive_forest_km2": 86024,
+      "share_percent": 4.201
+    },
+    {
+      "period": "2021-2025",
+      "end_year": 2025,
+      "protected_productive_forest_km2": 3712,
+      "total_productive_forest_km2": 86044,
+      "share_percent": 4.314
+    }
+  ]
+}

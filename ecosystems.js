@@ -47,7 +47,7 @@
           'Dokumentert verneandel: ikke tilgjengelig i denne utgaven.' :
           (approx?'Omtrentlig verneandel: ':'Dokumentert verneandel: ')+fmt(entry.protected_percent)+' % ('+entry.coverage_definition+').';
         const index=document.createElement('p');
-        index.textContent='Naturindeks 2025: '+fmt(entry.nature_index)+' av 1,0. Dette er ikke verneandel.';
+        index.textContent='Naturindeks 2025 (referanseår 2024): '+fmt(entry.nature_index)+' av 1,0. Dette er ikke verneandel.';
         const source=document.createElement('a');
         source.href=entry.protected_source||data.forest_source.url;
         source.target='_blank';source.rel='noopener noreferrer';source.textContent='Kilde for verneandel ↗';
@@ -68,7 +68,7 @@
         list.append(btn);
         if(entry.id==='forest')select(entry,btn);
       }
-      status.textContent='Fem økosystemer • naturindeks 2025 (0–1) • vern: NIBIO per 1.1.2025 (skog) og naturmeldingen 2024 (øvrige, omtrentlige)';
+      status.textContent='Fem økosystemer • Naturindeks 2025, referanseår 2024 (0–1) • vern: NIBIO per 1.1.2025 (skog) og naturmeldingen 2024 (øvrige, omtrentlige)';
       root.dataset.loaded='true';
     })
     .catch(err=>{status.textContent='Økosystemdata kunne ikke verifiseres. Se NIBIO og Miljødirektoratet via kildelenkene.';console.error(err);});

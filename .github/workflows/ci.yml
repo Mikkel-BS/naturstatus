@@ -15,6 +15,9 @@ jobs:
           test -s index.html
           test -s styles.css
           test -s app.js
+          test -s map.js
+          node --check app.js
+          node --check map.js
       - name: Verify SSB integration against live official statistics
         run: |
           python scripts/check_map_sources.py

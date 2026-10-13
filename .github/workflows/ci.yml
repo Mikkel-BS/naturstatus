@@ -20,8 +20,10 @@ jobs:
           node --check map.js
           node --check goal.js
           node --check ecosystems.js
+          node --check nature_history.js
       - name: Verify SSB integration against live official statistics
         run: |
           python scripts/check_map_sources.py
           python scripts/update_ssb.py
+          python scripts/update_nature_index.py --check
           python -m unittest discover -s tests

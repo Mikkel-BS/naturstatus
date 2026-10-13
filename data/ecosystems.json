@@ -75,7 +75,7 @@
   ],
   "methods": {
     "comparability": "Naturindeks (0–1) og verneandel (0–100 %) er ulike indikatorer og kan ikke adderes, rangeres på samme skala eller tolkes som lik måloppnåelse.",
-    "coverage": "Kun skog har en verifisert økosystemspesifikk verneandel i denne versjonen. Andre økosystemer står eksplisitt som manglende data.",
+    "coverage": "Kun skog har en verifisert økosystemspesifikk verneandel i denne versjonen. Verneandel for andre økosystemer er ikke tilgjengelig og står eksplisitt som manglende data, ikke 0 %.",
     "geography": "Indikatorene gjelder skog og økosystemer på fastlandet; de er ikke direkte kompatible med Norges 30 %-mål, som inkluderer Svalbard og Jan Mayen.",
     "mountains_note": "Miljødirektoratet rapporterer høy vernedekning i fjellet og svakere dekning i lavlandet, uten at denne oversikten angir en harmonisert prosentandel.",
     "mountains_source": "https://www.miljodirektoratet.no/ansvarsomrader/vernet-natur/norges-verneomrader/"

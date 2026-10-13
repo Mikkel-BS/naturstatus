@@ -33,4 +33,4 @@ for layer in ('naturvern_omrade','foreslatt_naturvern_omrade'):
         mime=r.headers.get('Content-Type','')
         data=r.read()
     print('GetMap',layer,mime,len(data))
-    assert mime.startswith('image/png') and data[:8] == b'\\x89PNG\\r\\n\\x1a\\n' and len(data)>100
+    assert mime.startswith('image/png') and data[:8] == bytes.fromhex('89504e470d0a1a0a') and len(data)>100

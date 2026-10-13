@@ -1,29 +1,42 @@
 # Naturstatus Norge
 
-Åpen, kildebasert oversikt over Norges naturmål og historisk arealvern.
+Åpent norsk dashboard som viser utviklingen i vernet natur, datakilder og Norges mål mot 2030.
 
-## Status
+## Hva nettstedet måler
 
-Første versjon av nettsiden har dokumenterte sammenligningspunkter for fastlandet (2020 og 2025) og et særskilt nasjonalt tall rapportert mars 2026. Dette er **ikke** en full historisk tidsserie. Vi skal kun publisere en full år-for-år-serie når vi har verifisert måleenhet, geografisk avgrensning og offisiell kilde fra SSB.
+- Andel formelt vernet land på fastlandet: offentlig SSB-indikator for 2025 (17,8 %).
+- Formelt vern i hele Norge inkludert Svalbard og Jan Mayen: regjeringens rapporterte indikator i mars 2026 (25,8 %). Dette er ikke samme geografiske avgrensning som fastlandstallet.
+- SSB tabell 08936, km² vernet land: samlet, ikke-dobbeltellende total **fra 2018**, og separate vernekategorier fra **1975**. SSB begynte å inkludere Svalbard i nasjonale tall i 2010 og Jan Mayen i 2012. Skriptet trekker dem bare fra i år de inngår.
 
-## Kjør lokalt
+Målet om 30 % i 2030 inkluderer kvalifiserte OECM-tiltak og må ikke tolkes som likestilt med andel formelt vern. En økning i vern sier heller ikke alene noe sikkert om naturtilstand eller effektiv forvaltning.
 
-Ingen byggavhengigheter: `python -m http.server 8000` og åpne localhost:8000.
+## Lokal utvikling
 
-Kjør tester: `python -m unittest discover -s tests`.
+Ingen byggavhengigheter for nettsiden:
 
-## GitHub Pages
+```bash
+python -m http.server 8000
+python -m unittest discover -s tests
+```
 
-Settings → Pages → Build and deployment → **GitHub Actions**. Etter at denne grenen er merget til main vil publisering trigges på hver push. Forventet URL: https://mikkel-bs.github.io/naturstatus/.
+Hent den fullstendige serien fra SSB (krever internett):
 
-## Dataprinsipper
+```bash
+python scripts/update_ssb.py
+```
 
-Arealvern på fastlandet skal ikke presenteres som oppnåelse av et mål som også omfatter Svalbard og Jan Mayen. Formelt vern er ikke identisk med samlet måloppnåelse, siden kvalifiserte OECM-tiltak også kan telle. Vernet areal sier ikke i seg selv noe endelig om naturtilstand.
+Dette henter PxWeb API v2, validerer datastrukturen og kontrollerer at 2025-fastlandstallet blir 57 483,38 km². Ved ugyldig input stoppes importen med feil; eksisterende data beholdes.
 
-Kilder: [SSB 08936](https://www.ssb.no/statbank/table/08936/), [Meld. St. 35 (2023–2024)](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/).
+## Kontinuerlige oppdateringer
 
-## Neste oppgaver
+- Pull requests: `.github/workflows/ci.yml` kjører offline tester og et live SSB-integrasjonstest.
+- Ukentlig og ved endring av importkode: `.github/workflows/update-data.yml` henter og verifiserer SSB, committer kun reelle dataendringer.
+- `.github/workflows/pages.yml` publiserer på main og etter vellykket dataoppdaterings-workflow.
 
-- Verifiser og importer årlig SSB-serie fra 1975 og fremover.
-- Vis dagens vern og foreslått vern på kart fra Naturbase.
-- Dokumenter metode, kildeversjoner og datakvalitet.
+GitHub Pages må aktiveres under **Settings → Pages → Source: GitHub Actions**.
+
+## Kilder
+
+[SSB tabell 08936](https://www.ssb.no/statbank/table/08936/), [SSB metode for vernede områder](https://www.ssb.no/natur-og-miljo/areal/statistikk/vernede-omrader), [Meld. St. 35 (2023–2024)](https://www.regjeringen.no/no/dokumenter/meld.-st.-35-20232024/id3054780/).
+
+Historiske SSB-statistikker kan endres ved revisjon og ved endringer i kartgrunnlag og vernelovgivning. Før 2002 er noen arealer basert på verneforskrifter i stedet for digitale vernekart. Datapunkter som tilhører forskjellige kategorier skal ikke summeres uten kontroll av overlapp.

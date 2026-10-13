@@ -1,17 +1,40 @@
-// Deliberately only draws complete and validated series. The static fallback is clearly labeled.
-const status = document.querySelector('#chart-status');
+// Historical chart. Never interpolate across missing annual observations.
 const chart = document.querySelector('#chart');
-fetch('./data/historical.json', {cache:'no-cache'}).then(r => {if(!r.ok)throw new Error('No full series');return r.json()}).then(payload=>{
- const points=payload.points;
- if(!Array.isArray(points)||points.length<3||!points.every(p=>Number.isInteger(p.year)&&Number.isFinite(p.percent)&&p.percent>=0&&p.percent<=100))return;
- const sorted=[...points].sort((a,b)=>a.year-b.year);
- if(new Set(sorted.map(p=>p.year)).size!==sorted.length)return;
- const start=sorted[0].year, end=sorted.at(-1).year;
- const w=760,h=240,padX=55,top=24,bottom=52,maxY=Math.ceil(Math.max(20,...sorted.map(p=>p.percent))/5)*5;
- const x=year=>padX+(year-start)/(end-start)*(w-2*padX),y=value=>h-bottom-(value/maxY)*(h-bottom-top);
- const d=sorted.map((p,i)=>`${i?'L':'M'}${x(p.year).toFixed(2)},${y(p.percent).toFixed(2)}`).join(' ');
- const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;');
- chart.innerHTML=`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><line x1="${padX}" y1="${h-bottom}" x2="${w-padX}" y2="${h-bottom}" stroke="#ccd8cb"/><line x1="${padX}" y1="${y(maxY/2)}" x2="${w-padX}" y2="${y(maxY/2)}" stroke="#e2e9e1" stroke-dasharray="5 6"/><text x="7" y="${y(maxY/2)}" font-size="12" fill="#627866">${maxY/2}%</text><path d="${d}" fill="none" stroke="#3b8064" stroke-width="3.5" stroke-linejoin="round"/><text x="${padX}" y="${h-16}" text-anchor="middle" fill="#627866" font-size="14">${start}</text><text x="${w-padX}" y="${h-16}" text-anchor="middle" fill="#627866" font-size="14">${end}</text></svg>`;
- chart.setAttribute('aria-label',`Historiske tall for vernet landareal fra ${start} til ${end}, prosent`);
- status.textContent=`${sorted.length} registrerte år • SSB statistikk • oppdatert ${esc(payload.updated||'ukjent')}`;
-}).catch(()=>{});
+const status = document.querySelector('#chart-status');
+
+fetch('./data/historical.json', { cache: 'no-cache' })
+  .then(response => {
+    if (!response.ok) throw new Error('Historical data unavailable');
+    return response.json();
+  })
+  .then(data => {
+    if (data.scope !== 'mainland_land' || !Array.isArray(data.points)) throw new Error('Unexpected source');
+    const points = [...data.points].sort((a,b) => a.year - b.year);
+    if (points.length < 2 ||
+        !points.every(p => Number.isInteger(p.year) && Number.isFinite(p.percent) && p.percent >= 0 && p.percent <= 100) ||
+        new Set(points.map(p => p.year)).size !== points.length) throw new Error('Invalid series');
+    const start = points[0].year, end = points[points.length-1].year;
+    const isAnnual = points.length === end-start+1 && points.every((p,i) => p.year === start+i);
+    if (data.complete === true && !isAnnual) throw new Error('Incomplete series marked complete');
+
+    const width=760, height=240, left=58, right=60, top=25, bottom=48;
+    const maxY = Math.max(20, Math.ceil(Math.max(...points.map(p=>p.percent))/5)*5);
+    const x = year => left + ((year-start)/(end-start))*(width-left-right);
+    const y = value => height-bottom-(value/maxY)*(height-bottom-top);
+    const dots = points.map(p=>'<circle cx="'+x(p.year).toFixed(1)+'" cy="'+y(p.percent).toFixed(1)+'" r="5" fill="#3b8064"/>').join('');
+    const path = isAnnual ? '<path d="'+points.map((p,i)=>(i?'L':'M')+x(p.year).toFixed(1)+','+y(p.percent).toFixed(1)).join(' ')+'" stroke="#3b8064" stroke-width="3" fill="none"/>' : '';
+    const annotations = points.length<=5 ? points.map(p=>'<text x="'+x(p.year).toFixed(1)+'" y="'+(y(p.percent)-14).toFixed(1)+'" text-anchor="middle" font-size="15" fill="currentColor">'+p.percent.toFixed(1).replace('.',',')+' %</text>').join('') : '';
+    chart.innerHTML = '<svg viewBox="0 0 760 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+
+      '<line x1="58" y1="192" x2="700" y2="192" stroke="#d9ded6"/>'+
+      '<line x1="58" y1="'+y(maxY/2)+'" x2="700" y2="'+y(maxY/2)+'" stroke="#e7eae4" stroke-dasharray="4 6"/>'+
+      path + dots + annotations +
+      '<text x="58" y="220" text-anchor="middle" fill="currentColor" font-size="14">'+start+'</text>'+
+      '<text x="700" y="220" text-anchor="middle" fill="currentColor" font-size="14">'+end+'</text></svg>';
+    chart.setAttribute('aria-label', isAnnual
+      ? 'Årlig vernet landareal på fastlandet fra '+start+' til '+end
+      : 'Kun dokumenterte enkeltår for vernet landareal på fastlandet: '+points.map(p=>p.year).join(', '));
+    status.textContent = isAnnual
+      ? 'Årlig serie • '+points.length+' år • oppdatert '+data.updated
+      : 'Kun '+points.length+' dokumenterte målepunkter • ikke full tidsserie';
+  })
+  .catch(error => { status.textContent = 'Kun dokumenterte sammenligningspunkter. Historisk datasett kunne ikke lastes.'; console.warn(error); });

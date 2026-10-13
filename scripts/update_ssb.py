@@ -158,6 +158,10 @@ def main():
     write_if_changed(ROOT/"data"/"historical.csv",handle.getvalue())
     print("Validated SSB 08936:", ", ".join(f"{name} {len(items)} years" for name,items in result["series"].items()))
     print("Latest mainland protected land km²:",result["series"]["total"][-1])
+    print("Corrected 2009 mainland figures (NP/NR):",{
+        key: next((p["km2"] for p in result["series"][key] if p["year"] == 2009), None)
+        for key in ("national_park", "nature_reserve")
+    })
 
 if __name__ == "__main__":
     main()

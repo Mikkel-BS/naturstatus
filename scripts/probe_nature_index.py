@@ -56,3 +56,21 @@ try:
   print('CHUNK',token,'COUNT',len(matches))
   for m in matches[-4:]:print('SLICE',x[max(0,m.start()-280):min(len(x),m.start()+550)])
 except Exception as e:print('ERROR_JS',repr(e))
+
+# Official source behind the public ecosystem chart.
+root='https://www.naturindeks.no'
+for path in ['/Indicator/GetEcosystems']:
+ try:
+  req=urllib.request.Request(root+path,headers={'User-Agent':'Naturstatus/0.3','Accept':'application/json'})
+  with urllib.request.urlopen(req,timeout=25) as r: j=json.load(r)
+  print('ECOSYSTEM_LIST',json.dumps(j,ensure_ascii=False)[:7000])
+  entries=j.get('items',j) if isinstance(j,dict) else j
+  for entry in entries[:9]:
+   index=entry.get('okosystemID')
+   if index is None:continue
+   addr=root+'/Ecosystem/GetEcosystemChart/'+str(index)
+   try:
+    with urllib.request.urlopen(urllib.request.Request(addr,headers={'User-Agent':'Naturstatus/0.3','Accept':'application/json'}),timeout=25) as resp: detail=json.load(resp)
+    print('ECOSYSTEM_DETAIL',entry.get('navn'),index,json.dumps(detail,ensure_ascii=False)[:4200])
+   except Exception as e: print('ECOSYSTEM_ERROR',entry.get('navn'),repr(e))
+ except Exception as e:print('ECOSYSTEM_LIST_ERROR',repr(e))

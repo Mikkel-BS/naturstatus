@@ -29,3 +29,21 @@
 .map-disclaimer,.map-note{font-size:12px;color:#718071;line-height:1.7}
 .map-note{margin-bottom:0}
 @media(max-width:760px){.map-layout{grid-template-columns:1fr}#conservation-map{height:390px}.map-sidebar{max-height:450px}nav{gap:8px}nav a{font-size:10px}}
+
+.goal-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;margin:24px 0}
+.goal-readout{background:#eaf2ea;border-radius:9px;padding:28px}
+.goal-large{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:12px 0 22px}
+.goal-large strong{font:normal clamp(44px,5vw,67px) 'DM Serif Display',Georgia,serif;color:#1b513a}
+.goal-large span{font-size:14px;color:#4b6d5a}
+.goal-meter{height:13px;background:#cbdccc;border-radius:15px;overflow:hidden}
+.goal-meter span{display:block;height:100%;background:#387d5d;border-radius:15px}
+.goal-gap{font-size:14px;line-height:1.7;color:#365943}
+.small-source{font-size:12px;color:#567566}
+.small-source a{color:#245b40}
+.goal-facts{display:grid;gap:14px}
+.goal-facts>div{border:1px solid #dfebe0;border-radius:8px;padding:20px}
+.goal-state-label{font-size:10px;letter-spacing:.11em;color:#638775;font-weight:700;display:block;margin-bottom:8px}
+.goal-facts strong{font-size:17px;display:block;line-height:1.45}
+.goal-facts p{font-size:12px;color:#647768;line-height:1.6}
+.goal-accountability>.method-note{padding:15px;border-left:3px solid #72a187;background:#f5f8f3;color:#4e6957;font-size:12px}
+@media(max-width:760px){.goal-layout{grid-template-columns:1fr}.goal-readout{padding:20px}}

@@ -1,0 +1,11 @@
+{
+  "scope": "mainland_land",
+  "metric": "statutorily_protected_land_percent",
+  "complete": false,
+  "updated": "2026-04-08",
+  "source": "https://www.ssb.no/statbank/table/08936/",
+  "points": [
+    {"year": 2020, "percent": 17.5},
+    {"year": 2025, "percent": 17.8}
+  ]
+}

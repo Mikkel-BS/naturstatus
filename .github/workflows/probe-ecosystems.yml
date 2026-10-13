@@ -1,0 +1,13 @@
+name: Probe Nature Index sources
+on:
+  push:
+    branches: [feat/historical-ecosystem-trends]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/probe_nature_index.py

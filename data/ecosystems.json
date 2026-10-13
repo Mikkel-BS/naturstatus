@@ -22,12 +22,13 @@
   "nature_index": {
     "publisher": "Miljødirektoratet / Naturindeks for Norge 2025",
     "url": "https://www.miljodirektoratet.no/aktuelt/nyheter/2025/november-2025/ny-naturindeks-norsk-natur-betydelig-redusert/",
-    "reference_year": 2025,
+    "reference_year": 2024,
     "range": [
       0,
       1
     ],
-    "definition": "Indeks for biologisk mangfold relativt til et referansenivå (1 tilsvarer intakt økosystem), ikke verneandel og ikke direkte måloppnåelse for naturavtalen."
+    "definition": "Indeks for biologisk mangfold relativt til et referansenivå (1 tilsvarer intakt økosystem), ikke verneandel og ikke direkte måloppnåelse for naturavtalen. Tallene i 2025-utgaven refererer til 2024.",
+    "edition_year": 2025
   },
   "ecosystems": [
     {

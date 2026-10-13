@@ -1,0 +1,151 @@
+ecosystem,area,reference_year,nature_index_median,lower_95,upper_95,source
+forest,Hele Norge,2000,0.388,0.367,0.409,https://doi.org/10.21345/gfbt-pr39
+forest,Hele Norge,2010,0.395,0.382,0.408,https://doi.org/10.21345/gfbt-pr39
+forest,Hele Norge,2014,0.395,0.382,0.408,https://doi.org/10.21345/gfbt-pr39
+forest,Hele Norge,2019,0.42,0.409,0.434,https://doi.org/10.21345/gfbt-pr39
+forest,Hele Norge,2024,0.447,0.435,0.46,https://doi.org/10.21345/gfbt-pr39
+forest,Øst-Norge,2000,0.367,0.34,0.391,https://doi.org/10.21345/gfbt-pr39
+forest,Øst-Norge,2010,0.382,0.366,0.396,https://doi.org/10.21345/gfbt-pr39
+forest,Øst-Norge,2014,0.384,0.368,0.4,https://doi.org/10.21345/gfbt-pr39
+forest,Øst-Norge,2019,0.411,0.395,0.429,https://doi.org/10.21345/gfbt-pr39
+forest,Øst-Norge,2024,0.429,0.414,0.445,https://doi.org/10.21345/gfbt-pr39
+forest,Sør-Norge,2000,0.397,0.367,0.423,https://doi.org/10.21345/gfbt-pr39
+forest,Sør-Norge,2010,0.425,0.407,0.443,https://doi.org/10.21345/gfbt-pr39
+forest,Sør-Norge,2014,0.423,0.406,0.439,https://doi.org/10.21345/gfbt-pr39
+forest,Sør-Norge,2019,0.447,0.43,0.464,https://doi.org/10.21345/gfbt-pr39
+forest,Sør-Norge,2024,0.471,0.453,0.489,https://doi.org/10.21345/gfbt-pr39
+forest,Vest-Norge,2000,0.386,0.344,0.424,https://doi.org/10.21345/gfbt-pr39
+forest,Vest-Norge,2010,0.384,0.362,0.405,https://doi.org/10.21345/gfbt-pr39
+forest,Vest-Norge,2014,0.382,0.363,0.401,https://doi.org/10.21345/gfbt-pr39
+forest,Vest-Norge,2019,0.396,0.377,0.415,https://doi.org/10.21345/gfbt-pr39
+forest,Vest-Norge,2024,0.43,0.413,0.449,https://doi.org/10.21345/gfbt-pr39
+forest,Midt-Norge,2000,0.4,0.361,0.43,https://doi.org/10.21345/gfbt-pr39
+forest,Midt-Norge,2010,0.407,0.391,0.423,https://doi.org/10.21345/gfbt-pr39
+forest,Midt-Norge,2014,0.404,0.388,0.419,https://doi.org/10.21345/gfbt-pr39
+forest,Midt-Norge,2019,0.425,0.409,0.441,https://doi.org/10.21345/gfbt-pr39
+forest,Midt-Norge,2024,0.45,0.434,0.468,https://doi.org/10.21345/gfbt-pr39
+forest,Nord-Norge,2000,0.408,0.359,0.453,https://doi.org/10.21345/gfbt-pr39
+forest,Nord-Norge,2010,0.389,0.362,0.414,https://doi.org/10.21345/gfbt-pr39
+forest,Nord-Norge,2014,0.392,0.371,0.411,https://doi.org/10.21345/gfbt-pr39
+forest,Nord-Norge,2019,0.425,0.405,0.443,https://doi.org/10.21345/gfbt-pr39
+forest,Nord-Norge,2024,0.461,0.443,0.48,https://doi.org/10.21345/gfbt-pr39
+mountains,Hele Norge,2000,0.553,0.526,0.577,https://doi.org/10.21345/gfbt-pr39
+mountains,Hele Norge,2010,0.562,0.533,0.591,https://doi.org/10.21345/gfbt-pr39
+mountains,Hele Norge,2014,0.535,0.514,0.557,https://doi.org/10.21345/gfbt-pr39
+mountains,Hele Norge,2019,0.497,0.475,0.514,https://doi.org/10.21345/gfbt-pr39
+mountains,Hele Norge,2024,0.569,0.542,0.596,https://doi.org/10.21345/gfbt-pr39
+mountains,Øst-Norge,2000,0.482,0.441,0.521,https://doi.org/10.21345/gfbt-pr39
+mountains,Øst-Norge,2010,0.535,0.465,0.608,https://doi.org/10.21345/gfbt-pr39
+mountains,Øst-Norge,2014,0.485,0.442,0.536,https://doi.org/10.21345/gfbt-pr39
+mountains,Øst-Norge,2019,0.443,0.418,0.47,https://doi.org/10.21345/gfbt-pr39
+mountains,Øst-Norge,2024,0.452,0.432,0.472,https://doi.org/10.21345/gfbt-pr39
+mountains,Sør-Norge,2000,0.497,0.385,0.561,https://doi.org/10.21345/gfbt-pr39
+mountains,Sør-Norge,2010,0.54,0.417,0.618,https://doi.org/10.21345/gfbt-pr39
+mountains,Sør-Norge,2014,0.432,0.393,0.476,https://doi.org/10.21345/gfbt-pr39
+mountains,Sør-Norge,2019,0.428,0.385,0.469,https://doi.org/10.21345/gfbt-pr39
+mountains,Sør-Norge,2024,0.443,0.399,0.485,https://doi.org/10.21345/gfbt-pr39
+mountains,Vest-Norge,2000,0.509,0.448,0.566,https://doi.org/10.21345/gfbt-pr39
+mountains,Vest-Norge,2010,0.518,0.467,0.574,https://doi.org/10.21345/gfbt-pr39
+mountains,Vest-Norge,2014,0.458,0.421,0.495,https://doi.org/10.21345/gfbt-pr39
+mountains,Vest-Norge,2019,0.409,0.379,0.44,https://doi.org/10.21345/gfbt-pr39
+mountains,Vest-Norge,2024,0.452,0.4,0.501,https://doi.org/10.21345/gfbt-pr39
+mountains,Midt-Norge,2000,0.635,0.591,0.669,https://doi.org/10.21345/gfbt-pr39
+mountains,Midt-Norge,2010,0.621,0.571,0.67,https://doi.org/10.21345/gfbt-pr39
+mountains,Midt-Norge,2014,0.583,0.548,0.619,https://doi.org/10.21345/gfbt-pr39
+mountains,Midt-Norge,2019,0.544,0.513,0.573,https://doi.org/10.21345/gfbt-pr39
+mountains,Midt-Norge,2024,0.577,0.539,0.612,https://doi.org/10.21345/gfbt-pr39
+mountains,Nord-Norge,2000,0.573,0.54,0.602,https://doi.org/10.21345/gfbt-pr39
+mountains,Nord-Norge,2010,0.571,0.534,0.605,https://doi.org/10.21345/gfbt-pr39
+mountains,Nord-Norge,2014,0.573,0.54,0.605,https://doi.org/10.21345/gfbt-pr39
+mountains,Nord-Norge,2019,0.534,0.499,0.563,https://doi.org/10.21345/gfbt-pr39
+mountains,Nord-Norge,2024,0.651,0.607,0.698,https://doi.org/10.21345/gfbt-pr39
+wetlands,Hele Norge,2000,0.715,0.695,0.735,https://doi.org/10.21345/gfbt-pr39
+wetlands,Hele Norge,2010,0.668,0.642,0.692,https://doi.org/10.21345/gfbt-pr39
+wetlands,Hele Norge,2014,0.659,0.636,0.68,https://doi.org/10.21345/gfbt-pr39
+wetlands,Hele Norge,2019,0.66,0.641,0.676,https://doi.org/10.21345/gfbt-pr39
+wetlands,Hele Norge,2024,0.644,0.624,0.66,https://doi.org/10.21345/gfbt-pr39
+wetlands,Øst-Norge,2000,0.735,0.704,0.766,https://doi.org/10.21345/gfbt-pr39
+wetlands,Øst-Norge,2010,0.687,0.648,0.723,https://doi.org/10.21345/gfbt-pr39
+wetlands,Øst-Norge,2014,0.663,0.628,0.697,https://doi.org/10.21345/gfbt-pr39
+wetlands,Øst-Norge,2019,0.675,0.643,0.7,https://doi.org/10.21345/gfbt-pr39
+wetlands,Øst-Norge,2024,0.667,0.635,0.692,https://doi.org/10.21345/gfbt-pr39
+wetlands,Sør-Norge,2000,0.644,0.559,0.696,https://doi.org/10.21345/gfbt-pr39
+wetlands,Sør-Norge,2010,0.579,0.496,0.631,https://doi.org/10.21345/gfbt-pr39
+wetlands,Sør-Norge,2014,0.525,0.494,0.554,https://doi.org/10.21345/gfbt-pr39
+wetlands,Sør-Norge,2019,0.512,0.486,0.533,https://doi.org/10.21345/gfbt-pr39
+wetlands,Sør-Norge,2024,0.492,0.448,0.523,https://doi.org/10.21345/gfbt-pr39
+wetlands,Vest-Norge,2000,0.626,0.571,0.668,https://doi.org/10.21345/gfbt-pr39
+wetlands,Vest-Norge,2010,0.552,0.507,0.586,https://doi.org/10.21345/gfbt-pr39
+wetlands,Vest-Norge,2014,0.51,0.468,0.554,https://doi.org/10.21345/gfbt-pr39
+wetlands,Vest-Norge,2019,0.476,0.445,0.499,https://doi.org/10.21345/gfbt-pr39
+wetlands,Vest-Norge,2024,0.483,0.437,0.523,https://doi.org/10.21345/gfbt-pr39
+wetlands,Midt-Norge,2000,0.755,0.735,0.775,https://doi.org/10.21345/gfbt-pr39
+wetlands,Midt-Norge,2010,0.716,0.688,0.743,https://doi.org/10.21345/gfbt-pr39
+wetlands,Midt-Norge,2014,0.703,0.677,0.728,https://doi.org/10.21345/gfbt-pr39
+wetlands,Midt-Norge,2019,0.704,0.68,0.725,https://doi.org/10.21345/gfbt-pr39
+wetlands,Midt-Norge,2024,0.694,0.67,0.715,https://doi.org/10.21345/gfbt-pr39
+wetlands,Nord-Norge,2000,0.691,0.674,0.712,https://doi.org/10.21345/gfbt-pr39
+wetlands,Nord-Norge,2010,0.645,0.607,0.679,https://doi.org/10.21345/gfbt-pr39
+wetlands,Nord-Norge,2014,0.667,0.644,0.69,https://doi.org/10.21345/gfbt-pr39
+wetlands,Nord-Norge,2019,0.666,0.646,0.685,https://doi.org/10.21345/gfbt-pr39
+wetlands,Nord-Norge,2024,0.636,0.614,0.653,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Hele Norge,2000,0.519,0.473,0.565,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Hele Norge,2010,0.47,0.425,0.513,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Hele Norge,2014,0.445,0.4,0.492,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Hele Norge,2019,0.45,0.406,0.491,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Hele Norge,2024,0.445,0.413,0.477,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Øst-Norge,2000,0.51,0.444,0.572,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Øst-Norge,2010,0.487,0.429,0.549,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Øst-Norge,2014,0.484,0.423,0.544,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Øst-Norge,2019,0.471,0.412,0.53,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Øst-Norge,2024,0.463,0.438,0.491,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Sør-Norge,2000,0.53,0.479,0.582,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Sør-Norge,2010,0.483,0.43,0.533,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Sør-Norge,2014,0.471,0.424,0.514,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Sør-Norge,2019,0.47,0.425,0.518,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Sør-Norge,2024,0.45,0.424,0.479,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Vest-Norge,2000,0.441,0.381,0.495,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Vest-Norge,2010,0.375,0.323,0.427,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Vest-Norge,2014,0.343,0.296,0.392,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Vest-Norge,2019,0.358,0.311,0.399,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Vest-Norge,2024,0.386,0.334,0.45,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Midt-Norge,2000,0.5,0.44,0.559,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Midt-Norge,2010,0.452,0.389,0.505,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Midt-Norge,2014,0.408,0.348,0.468,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Midt-Norge,2019,0.411,0.353,0.467,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Midt-Norge,2024,0.407,0.362,0.454,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Nord-Norge,2000,0.579,0.483,0.676,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Nord-Norge,2010,0.528,0.437,0.617,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Nord-Norge,2014,0.51,0.422,0.599,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Nord-Norge,2019,0.515,0.425,0.6,https://doi.org/10.21345/gfbt-pr39
+open_lowland,Nord-Norge,2024,0.493,0.447,0.537,https://doi.org/10.21345/gfbt-pr39
+freshwater,Hele Norge,2000,0.792,0.642,0.858,https://doi.org/10.21345/gfbt-pr39
+freshwater,Hele Norge,2010,0.77,0.704,0.816,https://doi.org/10.21345/gfbt-pr39
+freshwater,Hele Norge,2014,0.776,0.734,0.802,https://doi.org/10.21345/gfbt-pr39
+freshwater,Hele Norge,2019,0.79,0.753,0.815,https://doi.org/10.21345/gfbt-pr39
+freshwater,Hele Norge,2024,0.789,0.752,0.814,https://doi.org/10.21345/gfbt-pr39
+freshwater,Øst-Norge,2000,0.774,0.639,0.836,https://doi.org/10.21345/gfbt-pr39
+freshwater,Øst-Norge,2010,0.743,0.681,0.79,https://doi.org/10.21345/gfbt-pr39
+freshwater,Øst-Norge,2014,0.75,0.697,0.781,https://doi.org/10.21345/gfbt-pr39
+freshwater,Øst-Norge,2019,0.765,0.715,0.802,https://doi.org/10.21345/gfbt-pr39
+freshwater,Øst-Norge,2024,0.773,0.721,0.809,https://doi.org/10.21345/gfbt-pr39
+freshwater,Sør-Norge,2000,0.755,0.582,0.831,https://doi.org/10.21345/gfbt-pr39
+freshwater,Sør-Norge,2010,0.725,0.648,0.786,https://doi.org/10.21345/gfbt-pr39
+freshwater,Sør-Norge,2014,0.749,0.696,0.783,https://doi.org/10.21345/gfbt-pr39
+freshwater,Sør-Norge,2019,0.765,0.71,0.802,https://doi.org/10.21345/gfbt-pr39
+freshwater,Sør-Norge,2024,0.771,0.72,0.806,https://doi.org/10.21345/gfbt-pr39
+freshwater,Vest-Norge,2000,0.786,0.621,0.861,https://doi.org/10.21345/gfbt-pr39
+freshwater,Vest-Norge,2010,0.748,0.654,0.809,https://doi.org/10.21345/gfbt-pr39
+freshwater,Vest-Norge,2014,0.758,0.707,0.791,https://doi.org/10.21345/gfbt-pr39
+freshwater,Vest-Norge,2019,0.776,0.721,0.811,https://doi.org/10.21345/gfbt-pr39
+freshwater,Vest-Norge,2024,0.779,0.732,0.815,https://doi.org/10.21345/gfbt-pr39
+freshwater,Midt-Norge,2000,0.789,0.665,0.848,https://doi.org/10.21345/gfbt-pr39
+freshwater,Midt-Norge,2010,0.785,0.72,0.835,https://doi.org/10.21345/gfbt-pr39
+freshwater,Midt-Norge,2014,0.763,0.715,0.794,https://doi.org/10.21345/gfbt-pr39
+freshwater,Midt-Norge,2019,0.791,0.745,0.826,https://doi.org/10.21345/gfbt-pr39
+freshwater,Midt-Norge,2024,0.778,0.732,0.814,https://doi.org/10.21345/gfbt-pr39
+freshwater,Nord-Norge,2000,0.827,0.675,0.904,https://doi.org/10.21345/gfbt-pr39
+freshwater,Nord-Norge,2010,0.814,0.72,0.876,https://doi.org/10.21345/gfbt-pr39
+freshwater,Nord-Norge,2014,0.825,0.758,0.867,https://doi.org/10.21345/gfbt-pr39
+freshwater,Nord-Norge,2019,0.827,0.784,0.861,https://doi.org/10.21345/gfbt-pr39
+freshwater,Nord-Norge,2024,0.82,0.774,0.855,https://doi.org/10.21345/gfbt-pr39

@@ -39,3 +39,21 @@ try:
        text=archive.read(member).decode('utf-8-sig')
        print('CSV HEAD',member,text[:1900])
 except Exception as e:print('DOWNLOAD ERROR',repr(e))
+
+paths=[
+f'https://api.nva.unit.no/download/{uuid}/files/{fid}',
+f'https://api.nva.unit.no/download/{uuid}/files/{fid}?download=true',
+f'https://api.nva.unit.no/download/{uuid}/files/{fid}?api=true',
+f'https://api.nva.unit.no/publication/{uuid}',
+f'https://nva.sikt.no/api/download/{uuid}/files/{fid}',
+f'https://api.nva.unit.no/publication/{uuid}/files/{fid}'
+]
+for u in paths:
+ try:
+  req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json','Referer':'https://nva.sikt.no/'})
+  with urllib.request.urlopen(req,timeout=12) as resp:
+   data=resp.read(500)
+   print('ALT',u,resp.status,resp.url,resp.headers.get('Content-Type'),data[:270])
+ except urllib.error.HTTPError as e:
+  print('ALT ERROR',u,e.code,e.headers.get('Content-Type'),e.read(250))
+ except Exception as e:print('ALT ERROR',u,repr(e))
